@@ -1,0 +1,21 @@
+.loginWrapper {
+  display: flex;
+  position: absolute;
+  top: 37px;
+  right: 147px;
+
+  li {
+    font-family: $font-base;
+    padding: 10px 9px 10px 9px;
+    font-size: 14px;
+  }
+  li:last-child {
+    border: 0.75px solid $yellow-color;
+    font-size: 13px;
+    margin-left: 20px;
+  }
+  &__link {
+    color: #737373;
+    text-decoration: none;
+  }
+}

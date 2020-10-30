@@ -1,0 +1,14 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+.hero-image {
+  width: 50%;
+  height: 100vh;
+  background-image: url("../../../assets/images/HeroImage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 0;
+}
