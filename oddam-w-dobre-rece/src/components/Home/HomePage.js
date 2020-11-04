@@ -1,6 +1,7 @@
 import React from "react";
 import HomeHeader from "./HomeHeader";
-import HomeThreeColumns from "./HomeThreeColumns";
+import Navigation from "./Navigation";
+import HomeTitle from "./HomeTitle";
 
 const HeaderWrapper = ({ children }) => {
   return (
@@ -15,7 +16,8 @@ const HomePage = () => {
   return (
     <HeaderWrapper>
       <HomeHeader />
-      <HomeThreeColumns />
+      <Navigation />
+      <HomeTitle />
     </HeaderWrapper>
   );
 };

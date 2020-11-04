@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  position: absolute;
+  right: 139px;
+  top: 100px;
+
+  li {
+    font-family: $font-base;
+    margin-left: 55px;
+    margin-top: 9px;
+    color: $lightgray-color;
+    font-size: 18px;
+  }
+  &__start {
+    border: 0.75px solid $lightgray-color;
+    padding: 9px 22px 9px 22px;
+    margin-top: 0 !important;
+  }
+}
