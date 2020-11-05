@@ -24,7 +24,9 @@
     display: flex;
     justify-content: space-around;
   }
-  button {
+  &__link {
+    box-sizing: border-box;
+    color: $lightgray-color;
     background-color: white;
     font-size: 32px;
     width: 300px;
@@ -33,5 +35,8 @@
     font-family: $font-base;
     font-weight: 300;
     border: 0.75px solid $lightgray-color;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 28px;
   }
 }

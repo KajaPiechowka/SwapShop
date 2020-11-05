@@ -11,14 +11,14 @@ const HomeTitle = () => {
       </h1>
       <img src={Decoration} alt="decoration"></img>
       <div>
-        <button>
+        <Link className="home-page-title__link" to="/login">
           Oddaj
           <br /> rzeczy
-        </button>
-        <button>
+        </Link>
+        <Link className="home-page-title__link" to="/login">
           zorganizuj
           <br /> zbiórkę
-        </button>
+        </Link>
       </div>
     </div>
   );
