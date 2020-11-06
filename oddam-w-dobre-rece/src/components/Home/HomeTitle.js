@@ -1,6 +1,7 @@
 import React from "react";
-import Decoration from "../../assets/icons/Decoration.svg";
+
 import { Link } from "react-router-dom";
+import DecorationImg from "../repetable/DecorationImg";
 
 const HomeTitle = () => {
   return (
@@ -9,13 +10,13 @@ const HomeTitle = () => {
         Zacznij pomagać! <br />
         Oddaj niechciane rzeczy w zaufane ręce
       </h1>
-      <img src={Decoration} alt="decoration"></img>
+      <DecorationImg />
       <div>
-        <Link className="home-page-title__link" to="/login">
+        <Link className="home-page-title__link link-button" to="/login">
           Oddaj
           <br /> rzeczy
         </Link>
-        <Link className="home-page-title__link" to="/login">
+        <Link className="home-page-title__link link-button" to="/login">
           zorganizuj
           <br /> zbiórkę
         </Link>

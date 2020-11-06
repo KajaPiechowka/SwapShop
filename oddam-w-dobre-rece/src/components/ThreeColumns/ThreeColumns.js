@@ -22,7 +22,7 @@ const columnsContent = [
   },
 ];
 
-const ThreeColumnsPage = () => {
+const ThreeColumns = () => {
   return (
     <div class="container three-columns">
       {columnsContent.map(({ number, title, text }, index) => (
@@ -32,4 +32,4 @@ const ThreeColumnsPage = () => {
   );
 };
 
-export default ThreeColumnsPage;
+export default ThreeColumns;

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Link, Switch, NavLink } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import HomePage from "./components/Home/HomePage";
 import Login from "./components/LoginPannel/Login";
 import "./scss/main.scss";

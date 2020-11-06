@@ -13,30 +13,9 @@
     text-align: center;
     line-height: 55px;
   }
-  img {
-    margin-top: 25px;
-    width: 253px;
-    height: 33px;
-    margin-bottom: 55px;
-  }
   div {
     width: 100%;
     display: flex;
     justify-content: space-around;
-  }
-  &__link {
-    box-sizing: border-box;
-    color: $lightgray-color;
-    background-color: white;
-    font-size: 32px;
-    width: 300px;
-    height: 120px;
-    text-transform: uppercase;
-    font-family: $font-base;
-    font-weight: 300;
-    border: 0.75px solid $lightgray-color;
-    text-decoration: none;
-    text-align: center;
-    padding-top: 28px;
   }
 }

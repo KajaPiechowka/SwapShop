@@ -2,8 +2,12 @@
 @import "./settings//colors";
 @import "./reset";
 
+@import "./repetable/decoration-img";
+@import "./repetable/link-button";
+
 @import "./sections/header/hero";
-@import "./sections/header/loginNav";
+@import "./sections/header/login-nav";
 @import "./sections/header/menu";
 @import "./sections/header/home-tilte";
-@import "./sections/ThreeColumns/threeColumns";
+@import "./sections/three-columns/three-columns";
+@import "./sections/simple-steps/simple-steps";

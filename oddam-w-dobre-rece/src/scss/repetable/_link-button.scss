@@ -1,0 +1,18 @@
+a.link-button {
+  box-sizing: border-box;
+  color: $lightgray-color;
+  background-color: white;
+  font-size: 36px;
+  width: 300px;
+  height: 120px;
+  text-transform: uppercase;
+  font-family: $font-base;
+  font-weight: 300;
+  border: 0.75px solid $lightgray-color;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 45px;
+}

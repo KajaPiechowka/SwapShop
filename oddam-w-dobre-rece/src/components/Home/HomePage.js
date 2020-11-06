@@ -2,7 +2,8 @@ import React from "react";
 import HomeHeader from "./HomeHeader";
 import Navigation from "./Navigation";
 import HomeTitle from "./HomeTitle";
-import ThreeColumnsPage from "../ThreeColumns/ThreeColumnsPage";
+import ThreeColumns from "../ThreeColumns/ThreeColumns";
+import SimpleSteps from "../SimpleSteps/SimpleSteps";
 
 const HeaderWrapper = ({ children }) => {
   return (
@@ -21,7 +22,8 @@ const HomePage = () => {
         <Navigation />
         <HomeTitle />
       </HeaderWrapper>
-      <ThreeColumnsPage />
+      <ThreeColumns />
+      <SimpleSteps />
     </>
   );
 };
