@@ -2,6 +2,7 @@ import React from "react";
 import HomeHeader from "./HomeHeader";
 import Navigation from "./Navigation";
 import HomeTitle from "./HomeTitle";
+import ThreeColumnsPage from "../ThreeColumns/ThreeColumnsPage";
 
 const HeaderWrapper = ({ children }) => {
   return (
@@ -14,11 +15,14 @@ const HeaderWrapper = ({ children }) => {
 
 const HomePage = () => {
   return (
-    <HeaderWrapper>
-      <HomeHeader />
-      <Navigation />
-      <HomeTitle />
-    </HeaderWrapper>
+    <>
+      <HeaderWrapper>
+        <HomeHeader />
+        <Navigation />
+        <HomeTitle />
+      </HeaderWrapper>
+      <ThreeColumnsPage />
+    </>
   );
 };
 

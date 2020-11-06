@@ -1,0 +1,36 @@
+.three-columns {
+  background-image: url("../../../assets/images/3-Columns-Background.png");
+  height: 384px;
+  display: flex;
+  justify-content: space-evenly;
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 252px;
+    text-align: center;
+    h2 {
+      font-size: 90px;
+      color: $green-color;
+      font-family: $font-base;
+      line-height: 122px;
+    }
+    span {
+      color: $lightgray-color;
+      font-family: $font-base;
+      font-size: 18px;
+      line-height: 30px;
+      margin-top: 10px;
+      margin-bottom: 28px;
+    }
+    p {
+      color: $lightgray-color;
+      font-size: 16px;
+      line-height: 18px;
+      font-family: $font-alt;
+      letter-spacing: -0.32px;
+      font-weight: 300;
+    }
+  }
+}
