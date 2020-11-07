@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import HomeTitle from "./HomeTitle";
 import ThreeColumns from "../ThreeColumns/ThreeColumns";
 import SimpleSteps from "../SimpleSteps/SimpleSteps";
+import AboutUs from "../AboutUs/AboutUs";
 
 const HeaderWrapper = ({ children }) => {
   return (
@@ -24,6 +25,7 @@ const HomePage = () => {
       </HeaderWrapper>
       <ThreeColumns />
       <SimpleSteps />
+      <AboutUs />
     </>
   );
 };

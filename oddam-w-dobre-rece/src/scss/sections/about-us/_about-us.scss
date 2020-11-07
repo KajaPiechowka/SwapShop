@@ -1,0 +1,35 @@
+.about-us {
+  height: 935px;
+  article {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-lightgray-color;
+    flex-grow: 1;
+  }
+  span {
+    font-size: 38px;
+  }
+  p {
+    font-family: $font-base;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 54px;
+    text-align: center;
+    width: 656px;
+  }
+  &__signature {
+    width: 209px;
+    height: auto;
+    margin-left: 400px;
+    margin-top: 40px;
+  }
+
+  &__image {
+    flex-grow: 3;
+    background-image: url("../../../assets/images/About-us.png");
+    background-size: cover;
+  }
+}
