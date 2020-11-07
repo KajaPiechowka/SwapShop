@@ -8,11 +8,11 @@
     font-family: $font-base;
     margin-left: 55px;
     margin-top: 9px;
-    color: $lightgray-color;
+    color: $main-text-color;
     font-size: 18px;
   }
   &__start {
-    border: 0.75px solid $lightgray-color;
+    border: 0.75px solid $main-text-color;
     padding: 9px 22px 9px 22px;
     margin-top: 0 !important;
   }
