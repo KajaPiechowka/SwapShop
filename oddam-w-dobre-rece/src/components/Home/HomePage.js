@@ -5,6 +5,7 @@ import HomeTitle from "./HomeTitle";
 import ThreeColumns from "../ThreeColumns/ThreeColumns";
 import SimpleSteps from "../SimpleSteps/SimpleSteps";
 import AboutUs from "../AboutUs/AboutUs";
+import PartnersSection from "../Partners/PartnersSection";
 
 const HeaderWrapper = ({ children }) => {
   return (
@@ -26,6 +27,7 @@ const HomePage = () => {
       <ThreeColumns />
       <SimpleSteps />
       <AboutUs />
+      <PartnersSection />
     </>
   );
 };
