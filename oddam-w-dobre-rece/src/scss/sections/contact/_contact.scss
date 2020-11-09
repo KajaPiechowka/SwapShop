@@ -1,0 +1,78 @@
+.contact {
+  background-image: url("../../../assets/images/Contact-Image.png");
+
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  &__form {
+    z-index: 1;
+    position: absolute;
+    right: 230px;
+    top: 280px;
+    width: 528px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h4 {
+      font-size: 38px;
+      line-height: 55px;
+      color: $main-text-color;
+    }
+  }
+  &__names {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  &__label {
+    font-size: 16px;
+    line-height: 78px;
+    font-family: $font-base;
+    font-weight: 600;
+    color: $main-text-color;
+  }
+  &__input {
+    border: none;
+    border-bottom: 1px solid $gray-borer-color;
+    font-size: 18px;
+    color: $blur-form-color;
+    font-family: $font-base;
+    width: 90%;
+    background-color: transparent;
+  }
+  &__message {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 200px;
+  }
+  &__textaeria {
+    height: 97px;
+    font-size: 18px;
+    border: none;
+    color: $blur-form-color;
+    font-family: $font-base;
+    border-bottom: 1px solid $gray-borer-color;
+    background-color: transparent;
+  }
+  &__send {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 44px;
+  }
+  &__button {
+    background-color: white;
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    font-family: $font-base;
+    border: 0.75px solid black;
+  }
+}

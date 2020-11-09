@@ -24,7 +24,7 @@ const columnsContent = [
 
 const ThreeColumns = () => {
   return (
-    <div class="container three-columns">
+    <div className="container three-columns">
       {columnsContent.map(({ number, title, text }, index) => (
         <Column key={index} number={number} title={title} text={text} />
       ))}
