@@ -1,23 +1,26 @@
 .contact {
   background-image: url("../../../assets/images/Contact-Image.png");
-
-  position: relative;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  justify-content: flex-end;
+  align-items: center;
   &::after {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     background-color: rgba(255, 255, 255, 0.8);
   }
   &__form {
     z-index: 1;
-    position: absolute;
-    right: 230px;
-    top: 280px;
-    width: 528px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 200px;
+    max-width: 530px;
+    max-height: 500px;
     h4 {
       font-size: 38px;
       line-height: 55px;
@@ -40,15 +43,17 @@
     border: none;
     border-bottom: 1px solid $gray-borer-color;
     font-size: 18px;
-    color: $blur-form-color;
+    color: $main-text-color;
     font-family: $font-base;
     width: 90%;
     background-color: transparent;
+    &::placeholder {
+      color: $blur-form-color;
+    }
   }
   &__message {
     display: flex;
     flex-direction: column;
-
     width: 100%;
     height: 200px;
   }
@@ -56,10 +61,13 @@
     height: 97px;
     font-size: 18px;
     border: none;
-    color: $blur-form-color;
+    color: $main-text-color;
     font-family: $font-base;
     border-bottom: 1px solid $gray-borer-color;
     background-color: transparent;
+    &::placeholder {
+      color: $blur-form-color;
+    }
   }
   &__send {
     width: 100%;
@@ -75,4 +83,12 @@
     font-family: $font-base;
     border: 0.75px solid black;
   }
+}
+
+.error {
+  color: red;
+  font-family: $font-base;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 600;
 }
