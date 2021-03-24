@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import Partner from "./Partner";
 
-const Partners = ({ partners }) => {
-  return (
+const Partners = ({ partners }) => (
     <ul className="partners__list">
       {partners.map((partner) => (
         <Partner
@@ -14,6 +15,9 @@ const Partners = ({ partners }) => {
       ))}
     </ul>
   );
-};
+
+Partners.propTypes = {
+  partners: PropTypes.array.isRequired,
+}
 
 export default Partners;

@@ -1,14 +1,13 @@
 import React from "react";
-import DecorationImg from "../repetable/DecorationImg";
 import { Link } from "react-router-dom";
+import DecorationImg from "../repetable/DecorationImg";
 import Step from "./Step";
 import TShirt from "../../assets/icons/TShirt.png";
 import Bag from "../../assets/icons/Bag.png";
 import Glass from "../../assets/icons/Glass.png";
 import Recycle from "../../assets/icons/Recycle.png";
 
-const SimpleSteps = () => {
-  return (
+const SimpleSteps = () => (
     <section id="what-about" className="container simple-steps">
       <div className="simple-steps__header">
         <h4>Wystarczą 4 proste kroki</h4>
@@ -48,6 +47,5 @@ const SimpleSteps = () => {
       </div>
     </section>
   );
-};
 
 export default SimpleSteps;

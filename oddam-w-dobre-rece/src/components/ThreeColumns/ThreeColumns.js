@@ -1,35 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Column from "./Column";
+import columnsContent from "./columnsContent";
 
-const columnsContent = [
-  {
-    number: 10,
-    title: "ODDANYCH WORKÓW",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
-  },
-  {
-    number: 5,
-    title: "WSPARTYCH ORGANIZACJI",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
-  },
-  {
-    number: 7,
-    title: "ZORGANIZOWANYCH ZBIÓREK",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.",
-  },
-];
-
-const ThreeColumns = () => {
-  return (
-    <div className="container three-columns">
-      {columnsContent.map(({ number, title, text }, index) => (
-        <Column key={index} number={number} title={title} text={text} />
-      ))}
-    </div>
-  );
-};
+const ThreeColumns = () => (
+  <div className="container three-columns">
+    {columnsContent.map(({ id, number, title, text }) => (
+      <Column key={id} number={number} title={title} text={text} />
+    ))}
+  </div>
+);
 
 export default ThreeColumns;

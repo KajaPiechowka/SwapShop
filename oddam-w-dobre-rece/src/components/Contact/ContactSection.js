@@ -1,12 +1,10 @@
-import React from "react";
-import ContactForm from "./ContactForm";
+import React from 'react';
+import ContactForm from './ContactForm';
 
-const ContactSection = () => {
-  return (
-    <div className="container contact">
-      <ContactForm />
-    </div>
-  );
-};
+const ContactSection = () => (
+  <div className="container contact">
+    <ContactForm />
+  </div>
+);
 
 export default ContactSection;

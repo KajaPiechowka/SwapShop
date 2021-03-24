@@ -6,8 +6,7 @@ import Login from "./components/LoginPannel/Login";
 import "./scss/main.scss";
 import Register from "./components/LoginPannel/Register";
 
-const App = () => {
-  return (
+const App = () => (
     <BrowserRouter>
       <>
         <Route exact path="/" component={HomePage} />
@@ -16,6 +15,5 @@ const App = () => {
       </>
     </BrowserRouter>
   );
-};
 
 ReactDOM.render(<App />, document.getElementById("root"));
