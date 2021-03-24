@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import DecorationImg from "../repetable/DecorationImg";
-import { fundations, organisations, local } from "./PartnersData";
-import PartnerWrappper from "./PartnerWrapper";
+import React, { useState } from 'react';
+import DecorationImg from '../repetable/DecorationImg';
+import partnersData from './PartnersData';
+import PartnerWrappper from './PartnerWrapper';
 
 const PartnersSection = () => {
-  const [currentPage, setCurrentPage] = useState(organisations);
+  const [currentPage, setCurrentPage] = useState('fundations');
 
   // const handleHangePage = (page) => {
   //   setCurrentPage(page);
@@ -16,24 +16,25 @@ const PartnersSection = () => {
       <DecorationImg />
       <div className="partners__buttons">
         <button
+          type="button"
           className="partners__buttons-button"
-          // onClick={handleHangePage(fundations)}
+          // onClick={handleHangePage('fundations')}
         >
           Fundacjom
         </button>
         <button
+          type="button"
           className="partners__buttons-button"
-          // onClick={handleHangePage(organisations)}
+          // onClick={handleHangePage('organisations')}
         >
-          Organizacjom
-          <br /> porządkowym
+          Organizacjom porządkowym
         </button>
         <button
+          type="button"
           className="partners__buttons-button"
-          // onClick={handleHangePage(local)}
+          // onClick={handleHangePage('local')}
         >
-          Lokalnym
-          <br /> zbiórkom
+          Lokalnym zbiórkom
         </button>
       </div>
       <p className="partners__paragraph">
@@ -41,7 +42,10 @@ const PartnersSection = () => {
         współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego
         potrzebują.
       </p>
-      <PartnerWrappper className="partners__wrapper" data={currentPage} />
+      <PartnerWrappper
+        className="partners__wrapper"
+        data={partnersData[currentPage]}
+      />
     </section>
   );
 };

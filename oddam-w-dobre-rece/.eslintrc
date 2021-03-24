@@ -1,0 +1,31 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "react/forbid-prop-types": [
+      1,
+      {
+        "checkContextTypes": false,
+        "checkChildContextTypes": false
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+
+    "no-unused-vars": [
+      1,
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

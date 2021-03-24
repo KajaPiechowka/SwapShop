@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types';
 import Partners from "./Partners";
 
 const PartnerWrappper = ({ data }) => {
@@ -6,12 +7,17 @@ const PartnerWrappper = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(3);
 
-  //get current post
+  // get current post
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = partners.slice(indexOfFirstPost, indexOfLastPost);
 
   return <Partners partners={currentPosts} />;
 };
+
+PartnerWrappper.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+
 
 export default PartnerWrappper;
