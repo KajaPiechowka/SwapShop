@@ -16,6 +16,6 @@ const LoginNav = () => (
   </ul>
 );
 
-const HomeHeader = () => <LoginNav />;
 
-export default HomeHeader;
+
+export default LoginNav;

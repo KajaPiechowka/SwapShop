@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import HomeHeader from './HomeHeader';
-import Navigation from './Navigation';
+
 import HomeTitle from './HomeTitle';
 import ThreeColumns from '../ThreeColumns/ThreeColumns';
 import SimpleSteps from '../SimpleSteps/SimpleSteps';
 import AboutUs from '../AboutUs/AboutUs';
 import PartnersSection from '../Partners/PartnersSection';
 import ContactSection from '../Contact/ContactSection';
+import Menu from '../Navigation/Menu'
+import Footer from '../Footer/Footer';
 
 const HeaderWrapper = ({ children }) => (
   <div className="container">
@@ -20,8 +21,7 @@ const HeaderWrapper = ({ children }) => (
 const HomePage = () => (
   <>
     <HeaderWrapper>
-      <HomeHeader />
-      <Navigation />
+      <Menu />
       <HomeTitle />
     </HeaderWrapper>
     <ThreeColumns />
@@ -29,12 +29,12 @@ const HomePage = () => (
     <AboutUs />
     <PartnersSection />
     <ContactSection />
+    <Footer/>
   </>
 );
 
 HeaderWrapper.propTypes = {
-    children: PropTypes.node.isRequired,
-}
-
+  children: PropTypes.node.isRequired,
+};
 
 export default HomePage;

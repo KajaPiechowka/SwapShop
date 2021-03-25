@@ -31,7 +31,7 @@ const ContactForm = () => {
               name="name"
               placeholder="Krzysztof"
               ref={register({ required: true, minLength: 2 })}
-              style={errors ? { borderBottom: '1px solid red' } : null}
+              style={errors.name ? { borderBottom: '1px solid red' } : null}
             />
             {errors.name && <p className="error">Imię jest za krótkie!</p>}
           </label>
@@ -49,21 +49,21 @@ const ContactForm = () => {
                 required: true,
                 pattern: re,
               })}
-              style={errors ? { borderBottom: '1px solid red' } : null}
+              style={errors.email ? { borderBottom: '1px solid red' } : null}
             />
             {errors.email && <p className="error">Email jest nieprawidłowy!</p>}
           </label>
         </div>
       </div>
       <div className="contact__message">
-        <label className="contact__label" htmlFor="message">
+        <label className="contact__label column" htmlFor="message">
           Wpisz swoją wiadomość
           <textarea
             name="message"
-            className="contact__textaeria"
+            className="contact__textarea"
             ref={register({ required: true, min: 120 })}
             placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            style={errors ? { borderBottom: '1px solid red' } : null}
+            style={errors.message ? { borderBottom: '1px solid red' } : null}
           />
           {errors.message && <p className="error">Wiadomość musi mieć conajmniej 120 znaków</p>}
         </label>

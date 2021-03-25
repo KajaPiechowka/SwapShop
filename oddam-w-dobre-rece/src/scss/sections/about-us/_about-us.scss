@@ -1,5 +1,5 @@
 .about-us {
-  height: 958px;
+  height: 100vh;
   article {
     box-sizing: border-box;
     display: flex;
@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     background-color: $background-lightgray-color;
-    flex-grow: 1;
+    width: 50%;
   }
   span {
     font-size: 38px;
@@ -28,8 +28,9 @@
   }
 
   &__image {
-    flex-grow: 3;
-    background-image: url("../../../assets/images/About-us.png");
+    width: 50%;
+    background-image: url('../../../assets/images/About-us.png');
     background-size: cover;
+    background-position: -100px;
   }
 }

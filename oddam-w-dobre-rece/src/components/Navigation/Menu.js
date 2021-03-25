@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-const Navigation = () => (
+const Menu = () => (
   <ul className="menu">
     <li className="menu__start">
       <Link to="start">Start</Link>
@@ -21,4 +21,4 @@ const Navigation = () => (
   </ul>
 );
 
-export default Navigation;
+export default Menu;

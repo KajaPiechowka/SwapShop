@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import DecorationImg from '../atoms/DecorationImg';
 import partnersData from './PartnersData';
-import PartnerWrappper from './PartnerWrapper';
+
+import Partners from './Partners';
 
 const PartnersSection = () => {
   const [currentPage, setCurrentPage] = useState('fundations');
 
-  // const handleHangePage = (page) => {
-  //   setCurrentPage(page);
-  // };
+  const handleHangePage = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <section id="partners" className="container partners">
@@ -18,21 +19,21 @@ const PartnersSection = () => {
         <button
           type="button"
           className="partners__buttons-button"
-          // onClick={handleHangePage('fundations')}
+          onClick={()=>handleHangePage('fundations')}
         >
           Fundacjom
         </button>
         <button
           type="button"
           className="partners__buttons-button"
-          // onClick={handleHangePage('organisations')}
+          onClick={()=>handleHangePage('organisations')}
         >
           Organizacjom porządkowym
         </button>
         <button
           type="button"
           className="partners__buttons-button"
-          // onClick={handleHangePage('local')}
+          onClick={()=>handleHangePage('local')}
         >
           Lokalnym zbiórkom
         </button>
@@ -41,7 +42,7 @@ const PartnersSection = () => {
         W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
         sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
       </p>
-      <PartnerWrappper className="partners__wrapper" data={partnersData[currentPage]} />
+      <Partners className="partners__wrapper" partners={partnersData[currentPage]} />
     </section>
   );
 };
