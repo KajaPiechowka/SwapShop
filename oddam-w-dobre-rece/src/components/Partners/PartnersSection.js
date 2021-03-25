@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DecorationImg from '../repetable/DecorationImg';
+import DecorationImg from '../atoms/DecorationImg';
 import partnersData from './PartnersData';
 import PartnerWrappper from './PartnerWrapper';
 
@@ -38,14 +38,10 @@ const PartnersSection = () => {
         </button>
       </div>
       <p className="partners__paragraph">
-        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-        współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego
-        potrzebują.
+        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
+        sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
       </p>
-      <PartnerWrappper
-        className="partners__wrapper"
-        data={partnersData[currentPage]}
-      />
+      <PartnerWrappper className="partners__wrapper" data={partnersData[currentPage]} />
     </section>
   );
 };

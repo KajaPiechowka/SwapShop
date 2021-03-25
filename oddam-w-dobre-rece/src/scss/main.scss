@@ -1,16 +1,16 @@
-@import "./settings/fonts";
-@import "./settings/colors";
-@import "./reset";
+@import './settings/fonts';
+@import './settings/colors';
+@import './reset';
 
-@import "./repetable/decoration-img";
-@import "./repetable/link-button";
+@import './atoms/decoration-img';
+@import './atoms/link-button';
 
-@import "./sections/header/hero";
-@import "./sections/header/login-nav";
-@import "./sections/header/menu";
-@import "./sections/header/home-tilte";
-@import "./sections/three-columns/three-columns";
-@import "./sections/simple-steps/simple-steps";
-@import "./sections/about-us/about-us";
-@import "./sections/partners/partners";
-@import "./sections/contact/contact";
+@import './sections/header/hero';
+@import './sections/header/login-nav';
+@import './sections/header/menu';
+@import './sections/header/home-tilte';
+@import './sections/three-columns/three-columns';
+@import './sections/simple-steps/simple-steps';
+@import './sections/about-us/about-us';
+@import './sections/partners/partners';
+@import './sections/contact/contact';
