@@ -8,12 +8,13 @@ const ContactForm = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
-    // fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: data,
-    // });
-    console.log(data);
+    fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: data,
+    })
+      .then((response) => response.json())
+      .then((answer) => console.log(answer));
   };
 
   return (
@@ -62,7 +63,7 @@ const ContactForm = () => {
             name="message"
             className="contact__textarea"
             ref={register({ required: true, min: 120 })}
-            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             style={errors.message ? { borderBottom: '1px solid red' } : null}
           />
           {errors.message && <p className="error">Wiadomość musi mieć conajmniej 120 znaków</p>}
