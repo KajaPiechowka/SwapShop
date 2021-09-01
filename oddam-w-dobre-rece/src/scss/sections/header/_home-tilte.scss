@@ -5,8 +5,8 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 280px;
-  right: 100px;
+  top: 30vh;
+  right: 10vw;
   h1 {
     color: $main-text-color;
     font-size: 36px;
@@ -16,6 +16,6 @@
   div {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }

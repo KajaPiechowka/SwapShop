@@ -1,7 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Column from "./Column";
-import columnsContent from "./columnsContent";
+import React from 'react';
+import Column from './Column';
+import columnsContent from './columnsContent';
 
 const ThreeColumns = () => (
   <div className="container three-columns">

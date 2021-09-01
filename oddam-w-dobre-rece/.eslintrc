@@ -11,10 +11,12 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
       }
     ],
-
+    "import/extensions": [1, { "extensions": ["js", "jsx", "ts", "tsx", "json"] }],
+    "import/no-unresolved": 0,
+    "no-undef": 0,
     "no-unused-vars": [
       1,
       {
@@ -27,5 +29,13 @@
   "env": {
     "browser": true,
     "node": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "no-undef": "warn"
+      }
+    }
+  ]
 }

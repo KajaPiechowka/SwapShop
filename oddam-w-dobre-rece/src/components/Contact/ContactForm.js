@@ -13,7 +13,6 @@ const ContactForm = () => {
     //   headers: { 'Content-Type': 'application/json' },
     //   body: data,
     // });
-    console.log(data);
   };
 
   return (
