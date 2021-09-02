@@ -2,8 +2,9 @@
 @import './settings/colors';
 @import './reset';
 
-@import './atoms/decoration-img';
-@import './atoms/link-button';
+@import './shared/decoration-img';
+@import './shared/link-button';
+@import './shared/pagination';
 
 @import './sections/header/hero';
 @import './sections/header/login-nav';

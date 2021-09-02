@@ -1,7 +1,7 @@
 import React from 'react';
 
-import DecorationImg from '../atoms/DecorationImg';
-import LinkButton from '../atoms/LinkButton/LinkButton';
+import DecorationImg from '../shared/DecorationImg';
+import LinkButton from '../shared/LinkButton/LinkButton';
 
 const HomeTitle = () => (
   <div className="home-page-title">

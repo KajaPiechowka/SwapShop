@@ -1,6 +1,6 @@
 import React from 'react';
 import Signature from '../../assets/icons/Signature.svg';
-import DecorationImg from '../atoms/DecorationImg';
+import DecorationImg from '../shared/DecorationImg';
 
 const AboutUs = () => (
   <section id="about-us" className="container about-us">

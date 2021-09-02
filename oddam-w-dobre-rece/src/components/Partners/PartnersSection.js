@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import DecorationImg from '../atoms/DecorationImg';
+import DecorationImg from '../shared/DecorationImg';
 import partnersData from './data/PartnersData';
-
-import PartnerWrappper from './PartnerWrapper.tsx';
+import Partners from './Partners';
 
 const PartnersSection = () => {
-  const [currentPage, setCurrentPage] = useState(partnersData.fundations);
+  const [currentPartners, setCurrentPartners] = useState(
+    partnersData.fundations,
+  );
 
   return (
     <section id="partners" className="container partners">
@@ -15,30 +16,33 @@ const PartnersSection = () => {
         <button
           type="button"
           className="partners__buttons-button"
-          onClick={() => setCurrentPage(partnersData.fundations)}
+          onClick={() => setCurrentPartners(partnersData.fundations)}
         >
           Fundacjom
         </button>
         <button
           type="button"
           className="partners__buttons-button"
-          onClick={() => setCurrentPage(partnersData.organisations)}
+          onClick={() => setCurrentPartners(partnersData.organisations)}
         >
           Organizacjom porządkowym
         </button>
         <button
           type="button"
           className="partners__buttons-button"
-          onClick={() => setCurrentPage(partnersData.local)}
+          onClick={() => setCurrentPartners(partnersData.local)}
         >
           Lokalnym zbiórkom
         </button>
       </div>
       <p className="partners__paragraph">
-        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
-        sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
+        współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego
+        potrzebują.
       </p>
-      <PartnerWrappper currentPartners={currentPage} />
+      <div className="partners__wrapper">
+        <Partners partners={currentPartners} />
+      </div>
     </section>
   );
 };

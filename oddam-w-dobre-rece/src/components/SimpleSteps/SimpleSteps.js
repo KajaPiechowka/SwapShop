@@ -1,11 +1,11 @@
 import React from 'react';
-import DecorationImg from '../atoms/DecorationImg';
+import DecorationImg from '../shared/DecorationImg';
 import Step from './Step';
 import TShirt from '../../assets/icons/TShirt.png';
 import Bag from '../../assets/icons/Bag.png';
 import Glass from '../../assets/icons/Glass.png';
 import Recycle from '../../assets/icons/Recycle.png';
-import LinkButton from '../atoms/LinkButton/LinkButton';
+import LinkButton from '../shared/LinkButton/LinkButton';
 
 const SimpleSteps = () => (
   <section id="what-about" className="container simple-steps">

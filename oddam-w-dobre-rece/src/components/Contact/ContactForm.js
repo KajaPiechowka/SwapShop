@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import DecorationImg from '../atoms/DecorationImg';
+import DecorationImg from '../shared/DecorationImg';
 
 const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; //eslint-disable-line
 
@@ -64,7 +64,9 @@ const ContactForm = () => {
             placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             style={errors ? { borderBottom: '1px solid red' } : null}
           />
-          {errors.message && <p className="error">Wiadomość musi mieć conajmniej 120 znaków</p>}
+          {errors.message && (
+            <p className="error">Wiadomość musi mieć conajmniej 120 znaków</p>
+          )}
         </label>
       </div>
       <div className="contact__send">
