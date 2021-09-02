@@ -4,15 +4,22 @@ import DecorationImg from '../shared/DecorationImg';
 
 const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; //eslint-disable-line
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const ContactForm = () => {
   const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormData) => {
     // fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
     //   body: data,
     // });
+    console.log(data.message.length);
   };
 
   return (
@@ -30,7 +37,7 @@ const ContactForm = () => {
               name="name"
               placeholder="Krzysztof"
               ref={register({ required: true, minLength: 2 })}
-              style={errors ? { borderBottom: '1px solid red' } : null}
+              style={errors ? { borderBottom: '1px solid red' } : undefined}
             />
             {errors.name && <p className="error">Imię jest za krótkie!</p>}
           </label>
@@ -48,7 +55,7 @@ const ContactForm = () => {
                 required: true,
                 pattern: re,
               })}
-              style={errors ? { borderBottom: '1px solid red' } : null}
+              style={errors ? { borderBottom: '1px solid red' } : undefined}
             />
             {errors.email && <p className="error">Email jest nieprawidłowy!</p>}
           </label>
@@ -62,7 +69,7 @@ const ContactForm = () => {
             className="contact__textaeria"
             ref={register({ required: true, min: 120 })}
             placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            style={errors ? { borderBottom: '1px solid red' } : null}
+            style={errors ? { borderBottom: '1px solid red' } : undefined}
           />
           {errors.message && (
             <p className="error">Wiadomość musi mieć conajmniej 120 znaków</p>

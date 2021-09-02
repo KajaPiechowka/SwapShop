@@ -20,6 +20,26 @@ const partnersData = {
         'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
       needs: 'ubrania, jedzenie, ciepłe koce',
     },
+    {
+      id: '!234751',
+      name: 'Fundacja “Dbam o Zdrowie”',
+      description:
+        'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.',
+      needs: 'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
+    },
+    {
+      id: '!234156',
+      name: 'Fundacja “Dla dzieci”',
+      description: 'Cel i misja: Pomoc dzieciom z ubogich rodzin.',
+      needs: 'ubrania, meble, zabawki',
+    },
+    {
+      id: '!231546',
+      name: 'Fundacja “Bez domu”',
+      description:
+        'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
+      needs: 'ubrania, jedzenie, ciepłe koce',
+    },
   ],
   organisations: [
     {
@@ -101,26 +121,6 @@ const partnersData = {
         'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
       needs: 'ubrania, jedzenie, ciepłe koce',
     },
-    {
-      id: '!234751',
-      name: 'Organizacja “Dbam o Zdrowie”',
-      description:
-        'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.',
-      needs: 'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
-    },
-    {
-      id: '!234156',
-      name: 'Organizacja “Dla dzieci”',
-      description: 'Cel i misja: Pomoc dzieciom z ubogich rodzin.',
-      needs: 'ubrania, meble, zabawki',
-    },
-    {
-      id: '!231546',
-      name: 'Organizacja “Bez domu”',
-      description:
-        'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
-      needs: 'ubrania, jedzenie, ciepłe koce',
-    },
   ],
   local: [
     {
@@ -137,31 +137,10 @@ const partnersData = {
       needs: 'ubrania, meble, zabawki',
     },
     {
-      id: '1233456',
-      name: 'zbiórka “Bez domu””',
-      description:
-        'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
-      needs: 'ubrania, jedzenie, ciepłe koce',
-    },
-    {
-      id: '!211456',
-      name: 'zbiórka “Dbam o Zdrowie”',
-      description:
-        'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.',
-      needs: 'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
-    },
-    {
       id: '!132456',
       name: 'zbiórka “Dla dzieci””',
       description: 'Cel i misja: Pomoc dzieciom z ubogich rodzin.',
       needs: 'ubrania, meble, zabawki',
-    },
-    {
-      id: '1233456',
-      name: 'zbiórka “Bez domu””',
-      description:
-        'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
-      needs: 'ubrania, jedzenie, ciepłe koce',
     },
   ],
 };
