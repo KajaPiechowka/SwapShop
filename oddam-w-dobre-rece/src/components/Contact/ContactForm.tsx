@@ -66,7 +66,6 @@ const ContactForm = () => {
             Wpisz swój email
             <input
               className="contact__input"
-              type="email"
               id="email"
               {...register('email', {
                 required: { value: true, message: 'Email nie może być pusty!' },

@@ -24,3 +24,22 @@ a.button-big {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+a.button-medium {
+  font-size: 18px;
+  width: 150px;
+  height: 60px;
+  line-height: 45px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a.button-small {
+  font-size: 12px;
+  width: 80px;
+  height: 30px;
+  line-height: 14px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-transform: none;
+}
