@@ -1,0 +1,25 @@
+.footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  &__text {
+    font-family: $font-base;
+    color: $color-text-main;
+    font-size: 16px;
+  }
+  &__social {
+    position: absolute;
+    bottom: 0;
+    right: 60px;
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    @include buttonAnimation;
+  }
+}
