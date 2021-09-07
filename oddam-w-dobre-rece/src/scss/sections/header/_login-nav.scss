@@ -8,14 +8,15 @@
     font-family: $font-base;
     padding: 10px 9px 10px 9px;
     font-size: 14px;
+    @include buttonAnimation;
   }
   li:last-child {
-    border: 0.75px solid $yellow-color;
+    border: 0.75px solid $color-yellow;
     font-size: 13px;
     margin-left: 20px;
   }
   &__link {
-    color: $aside-text-color;
+    color: $color-text-aside;
     text-decoration: none;
   }
 }

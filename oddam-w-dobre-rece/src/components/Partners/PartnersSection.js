@@ -17,6 +17,11 @@ const PartnersSection = () => {
           type="button"
           className="partners__buttons-button"
           onClick={() => setCurrentPartners(partnersData.fundations)}
+          style={
+            currentPartners === partnersData.fundations
+              ? { border: '0.75px solid black' }
+              : undefined
+          }
         >
           Fundacjom
         </button>
@@ -24,6 +29,11 @@ const PartnersSection = () => {
           type="button"
           className="partners__buttons-button"
           onClick={() => setCurrentPartners(partnersData.organisations)}
+          style={
+            currentPartners === partnersData.organisations
+              ? { border: '0.75px solid black' }
+              : undefined
+          }
         >
           Organizacjom porządkowym
         </button>
@@ -31,6 +41,11 @@ const PartnersSection = () => {
           type="button"
           className="partners__buttons-button"
           onClick={() => setCurrentPartners(partnersData.local)}
+          style={
+            currentPartners === partnersData.local
+              ? { border: '0.75px solid black' }
+              : undefined
+          }
         >
           Lokalnym zbiórkom
         </button>

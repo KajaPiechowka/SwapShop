@@ -1,11 +1,11 @@
 .contact {
-  background-image: url("../../../assets/images/Contact-Image.png");
+  background-image: url('../../../assets/images/Contact-Image.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   justify-content: flex-end;
   align-items: center;
   &::after {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
@@ -18,62 +18,76 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 200px;
-    max-width: 530px;
-    max-height: 500px;
+    margin-right: 6vw;
+    max-width: 500px;
+    max-height: 480px;
+    margin-bottom: 100px;
     h4 {
       font-size: 38px;
       line-height: 55px;
-      color: $main-text-color;
+      color: $color-text-main;
     }
   }
   &__names {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 20px;
   }
   &__label {
     font-size: 16px;
-    line-height: 78px;
+    line-height: 50px;
     font-family: $font-base;
     font-weight: 600;
-    color: $main-text-color;
+    color: $color-text-main;
+    display: flex;
+    flex-direction: column;
   }
   &__input {
     border: none;
-    border-bottom: 1px solid $gray-borer-color;
+    border-bottom: 1px solid $color-border-gray;
     font-size: 18px;
-    color: $main-text-color;
+    color: $color-text-main;
     font-family: $font-base;
     width: 90%;
     background-color: transparent;
     &::placeholder {
-      color: $blur-form-color;
+      color: $color-form-blur;
     }
+  }
+  &__info {
+    padding-top: 20px;
+    color: $color-success;
+    font-family: $font-base;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 0;
+    font-weight: 600;
+    width: 200px;
   }
   &__message {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 200px;
+    height: 300px;
+    padding-top: 20px;
   }
   &__textaeria {
-    height: 97px;
+    min-height: 120px;
     font-size: 18px;
     border: none;
-    color: $main-text-color;
+    color: $color-text-main;
     font-family: $font-base;
-    border-bottom: 1px solid $gray-borer-color;
+    border-bottom: 1px solid $color-border-gray;
     background-color: transparent;
+
     &::placeholder {
-      color: $blur-form-color;
+      color: $color-form-blur;
     }
   }
   &__send {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-top: 44px;
   }
   &__button {
     background-color: white;
@@ -82,13 +96,16 @@
     font-size: 18px;
     font-family: $font-base;
     border: 0.75px solid black;
+    margin-top: 20px;
+    @include buttonAnimation();
   }
-}
 
-.error {
-  color: red;
-  font-family: $font-base;
-  font-size: 14px;
-  margin-top: 5px;
-  font-weight: 600;
+  .error {
+    color: $color-error;
+    font-family: $font-base;
+    font-size: 14px;
+    margin-top: 0;
+    font-weight: 600;
+    height: 30px;
+  }
 }
