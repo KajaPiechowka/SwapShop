@@ -8,12 +8,13 @@
     font-family: $font-base;
     margin-left: 55px;
     margin-top: 9px;
-    color: $main-text-color;
+    color: $color-text-main;
     font-size: 18px;
     cursor: pointer;
+    @include buttonAnimation;
   }
   &__start {
-    border: 0.75px solid $main-text-color;
+    border: 0.75px solid $color-text-main;
     padding: 9px 22px 9px 22px;
     margin-top: 0 !important;
   }

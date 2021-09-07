@@ -1,0 +1,11 @@
+@mixin buttonAnimation {
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    background-color: $color-background-lightgray;
+    color: white;
+    font-weight: 400;
+  }
+  transition: transform 0.3s ease-in-out;
+}

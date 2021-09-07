@@ -1,12 +1,12 @@
 .about-us {
-  height: 958px;
+  height: 100vh;
   article {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $background-lightgray-color;
+    background-color: $color-background-lightgray;
     flex-grow: 1;
   }
   span {
@@ -28,8 +28,9 @@
   }
 
   &__image {
+    min-width: 50%;
     flex-grow: 3;
-    background-image: url("../../../assets/images/About-us.png");
+    background-image: url('../../../assets/images/About-us.png');
     background-size: cover;
   }
 }

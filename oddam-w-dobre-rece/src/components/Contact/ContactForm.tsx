@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import DecorationImg from '../shared/DecorationImg';
 
-const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; //eslint-disable-line
+const reName = /^\S*$/; //eslint-disable-line
+const reEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; //eslint-disable-line
 
 interface FormData {
   name: string;
@@ -11,21 +12,32 @@ interface FormData {
 }
 
 const ContactForm = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const [status, setStatus] = useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    // fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: data,
-    // });
-    console.log(data.message.length);
+  const postData = (data: FormData) => {
+    fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then(() =>
+        setStatus('Wiadomość zoatała wysłana! Wkrótce się skontaktujemy.'),
+      )
+      .catch(() =>
+        setStatus('Nie udało się wysłać wiadomości. Spróbuj ponownie później.'),
+      );
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
+    <form onSubmit={handleSubmit(postData)} className="contact__form">
       <h4 className="contact__title">Skontaktuj się z nami</h4>
-      <DecorationImg />
+      <DecorationImg mariginBottom={0} />
+      <p className="contact__info">{status}</p>
       <div className="contact__names">
         <div>
           <label className="contact__label" htmlFor="name">
@@ -34,12 +46,19 @@ const ContactForm = () => {
               className="contact__input"
               type="text"
               id="name"
-              name="name"
+              {...register('name', {
+                required: { value: true, message: 'Imię nie może być puste!' },
+                pattern: {
+                  value: reName,
+                  message: 'Imię musi być jednym wrazem!',
+                },
+              })}
               placeholder="Krzysztof"
-              ref={register({ required: true, minLength: 2 })}
-              style={errors ? { borderBottom: '1px solid red' } : undefined}
+              style={
+                errors.name ? { borderBottom: '1px solid red' } : undefined
+              }
             />
-            {errors.name && <p className="error">Imię jest za krótkie!</p>}
+            {errors.name && <p className="error">{errors.name.message}</p>}
           </label>
         </div>
         <div>
@@ -49,15 +68,19 @@ const ContactForm = () => {
               className="contact__input"
               type="email"
               id="email"
-              name="email"
-              placeholder="abc@xyz.pl"
-              ref={register({
-                required: true,
-                pattern: re,
+              {...register('email', {
+                required: { value: true, message: 'Email nie może być pusty!' },
+                pattern: {
+                  value: reEmail,
+                  message: 'Email jest nieprawidłowy',
+                },
               })}
-              style={errors ? { borderBottom: '1px solid red' } : undefined}
+              placeholder="abc@xyz.pl"
+              style={
+                errors.email ? { borderBottom: '1px solid red' } : undefined
+              }
             />
-            {errors.email && <p className="error">Email jest nieprawidłowy!</p>}
+            {errors.email && <p className="error">{errors.email.message}</p>}
           </label>
         </div>
       </div>
@@ -65,15 +88,23 @@ const ContactForm = () => {
         <label className="contact__label" htmlFor="message">
           Wpisz swoją wiadomość
           <textarea
-            name="message"
+            {...register('message', {
+              required: {
+                value: true,
+                message: 'Wiadomość nie może być pusta!',
+              },
+              minLength: {
+                value: 120,
+                message: 'Wiadomość musi mieć minimum 120 znaków!',
+              },
+            })}
             className="contact__textaeria"
-            ref={register({ required: true, min: 120 })}
-            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            style={errors ? { borderBottom: '1px solid red' } : undefined}
+            placeholder="Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            style={
+              errors.message ? { borderBottom: '1px solid red' } : undefined
+            }
           />
-          {errors.message && (
-            <p className="error">Wiadomość musi mieć conajmniej 120 znaków</p>
-          )}
+          {errors.message && <p className="error">{errors.message?.message}</p>}
         </label>
       </div>
       <div className="contact__send">

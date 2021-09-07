@@ -17,13 +17,13 @@
     border: none;
     height: 40px;
     width: 30px;
-    color: $main-text-color;
+    color: $color-text-main;
     &:hover {
       transform: scale(1.1);
-      background-color: $background-lightgray-color;
+      background-color: $color-background-lightgray;
     }
   }
 }
 .active {
-  border: 1px solid $main-text-color;
+  border: 1px solid $color-text-main;
 }

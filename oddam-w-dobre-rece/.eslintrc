@@ -15,7 +15,10 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
       }
     ],
-    "import/extensions": [1, { "extensions": ["js", "jsx", "ts", "tsx", "json"] }],
+    "import/extensions": [
+      1,
+      { "extensions": ["js", "jsx", "ts", "tsx", "json"] }
+    ],
     "import/no-unresolved": 0,
     "no-undef": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
@@ -26,7 +29,9 @@
         "args": "after-used",
         "ignoreRestSiblings": false
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-boolean-value": 0
   },
   "env": {
     "browser": true,

@@ -7,7 +7,7 @@
   h3 {
     font-size: 38px;
     line-height: 55px;
-    color: $main-text-color;
+    color: $color-text-main;
     margin-top: 70px;
   }
   &__buttons {
@@ -22,6 +22,7 @@
       font-size: 28px;
       font-family: $font-base;
       border: none;
+      @include buttonAnimation;
     }
   }
   &__paragraph {
@@ -50,7 +51,7 @@
     padding-right: 40px;
   }
   &__partner:not(:last-child) {
-    border-bottom: 1px solid $aside-text-color;
+    border-bottom: 1px solid $color-text-aside;
   }
   &__partner-left {
     display: flex;
@@ -61,13 +62,13 @@
       line-height: 31px;
       font-weight: 300;
       font-family: $font-alt;
-      color: $main-text-color;
+      color: $color-text-main;
     }
     p {
       font-size: 18px;
       line-height: 22px;
       font-family: $font-alt;
-      color: $main-text-color;
+      color: $color-text-main;
       margin-top: 6px;
       font-weight: 300;
       font-style: italic;
@@ -77,7 +78,7 @@
     font-size: 18px;
     line-height: 22px;
     margin-top: 25px;
-    color: $main-text-color;
+    color: $color-text-main;
     font-family: $font-alt;
   }
 }
