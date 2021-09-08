@@ -2,16 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
-import Login from './pages/LoginPannel/Login';
+import LoginPannel from './pages/LoginPage/LoginPannel';
 import './scss/main.scss';
-import Register from './pages/LoginPannel/Register';
 
 const App = () => (
   <BrowserRouter>
     <>
       <Route exact path="/" component={HomePage} />
-      <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />
+      <Route path="/login" component={LoginPannel} />
+      <Route path="/register" component={LoginPannel} />
     </>
   </BrowserRouter>
 );

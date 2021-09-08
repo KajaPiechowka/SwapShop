@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { reEmail, reName } from '../../assets/variables/regex';
 import DecorationImg from '../shared/DecorationImg';
-
-const reName = /^\S*$/; //eslint-disable-line
-const reEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; //eslint-disable-line
 
 interface FormData {
   name: string;
@@ -50,7 +48,7 @@ const ContactForm = () => {
                 required: { value: true, message: 'Imię nie może być puste!' },
                 pattern: {
                   value: reName,
-                  message: 'Imię musi być jednym wrazem!',
+                  message: 'Imię musi być jednym wyrazem!',
                 },
               })}
               placeholder="Krzysztof"

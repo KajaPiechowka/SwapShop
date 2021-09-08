@@ -7,7 +7,7 @@ const NavigationMenu = () => (
       <Link to="start">Start</Link>
     </li>
     <li>
-      <Link to="what-about">O co hodzi?</Link>
+      <Link to="what-about">O co chodzi?</Link>
     </li>
     <li>
       <Link to="about-us">O nas</Link>
