@@ -11,6 +11,7 @@ const App = () => (
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LoginPannel} />
       <Route path="/register" component={LoginPannel} />
+      <Route path="/logout" component={LoginPannel} />
     </>
   </BrowserRouter>
 );

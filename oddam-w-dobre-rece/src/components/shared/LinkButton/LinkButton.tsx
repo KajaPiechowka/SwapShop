@@ -5,7 +5,7 @@ interface LinkButtonProps {
   text: string;
   link: string;
   size: 'small' | 'medium' | 'big';
-  border: string | undefined;
+  border?: string | undefined;
 }
 
 const LinkButton = ({

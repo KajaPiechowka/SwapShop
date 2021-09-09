@@ -26,12 +26,14 @@
 }
 
 .button-medium {
-  font-size: 18px;
-  width: 150px;
-  height: 60px;
-  line-height: 45px;
+  font-size: 16px;
+  width: 140px;
+  height: 50px;
+  line-height: 18px;
   padding-left: 10px;
   padding-right: 10px;
+  text-transform: none;
+  font-weight: 400;
 }
 
 .button-small {
@@ -42,4 +44,5 @@
   padding-left: 2px;
   padding-right: 2px;
   text-transform: none;
+  font-weight: 400;
 }
