@@ -20,9 +20,7 @@ const Partners = ({ partners }: PartnersProps): JSX.Element => {
   );
 
   useEffect(() => {
-    if (partners.length <= partnersPerPage) {
-      setCurrentPage(1);
-    }
+    setCurrentPage(1);
   }, [partners]);
 
   const paginate = (pageNumber: number) => {

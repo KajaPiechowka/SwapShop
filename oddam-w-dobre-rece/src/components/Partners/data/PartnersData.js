@@ -9,24 +9,18 @@ const partnersData = {
     },
     {
       id: '!23486',
-      name: 'Fundacja “Dla dzieci””',
+      name: 'Fundacja “Dla dzieci”',
       description: 'Cel i misja: Pomoc dzieciom z ubogich rodzin.',
       needs: 'ubrania, meble, zabawki',
     },
     {
       id: '!28456',
-      name: 'Fundacja “Bez domu””',
+      name: 'Fundacja “Bez domu”',
       description:
         'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
       needs: 'ubrania, jedzenie, ciepłe koce',
     },
-    {
-      id: '!234751',
-      name: 'Fundacja “Dbam o Zdrowie”',
-      description:
-        'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.',
-      needs: 'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
-    },
+
     {
       id: '!234156',
       name: 'Fundacja “Dla dzieci”',
@@ -39,6 +33,13 @@ const partnersData = {
       description:
         'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.',
       needs: 'ubrania, jedzenie, ciepłe koce',
+    },
+    {
+      id: '!234751',
+      name: 'Fundacja “Dbam o Zdrowie”',
+      description:
+        'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.',
+      needs: 'ubrania, jedzenie, sprzęt AGD, meble, zabawki',
     },
   ],
   organisations: [
@@ -132,13 +133,13 @@ const partnersData = {
     },
     {
       id: '!134556',
-      name: 'zbiórka “Dla dzieci””',
+      name: 'zbiórka “Dla dzieci”',
       description: 'Cel i misja: Pomoc dzieciom z ubogich rodzin.',
       needs: 'ubrania, meble, zabawki',
     },
     {
       id: '!132456',
-      name: 'zbiórka “Dla dzieci””',
+      name: 'zbiórka “Dla dzieci”',
       description: 'Cel i misja: Pomoc dzieciom z ubogich rodzin.',
       needs: 'ubrania, meble, zabawki',
     },
