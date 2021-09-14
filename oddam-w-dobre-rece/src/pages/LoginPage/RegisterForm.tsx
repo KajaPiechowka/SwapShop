@@ -1,12 +1,10 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useLocation } from 'react-router';
+import { useHistory } from 'react-router';
 import { reEmail } from '../../assets/variables/regex';
-import Navigation from '../../components/Navigation/Navigation';
 import DecorationImg from '../../components/shared/DecorationImg';
 import LinkButton from '../../components/shared/LinkButton/LinkButton';
-import { FirebaseContext } from '../../components/Firebase';
-import RegisterForm, { RegisterFormProps } from './RegisterForm';
+import Firebase from '../../components/Firebase';
 
 interface FormData {
   email: string;
@@ -14,8 +12,14 @@ interface FormData {
   password2?: string;
 }
 
-const FormOption = ({ firebase }: RegisterFormProps): JSX.Element => {
-  const location = useLocation();
+export interface RegisterFormProps {
+  firebase: Firebase | null;
+}
+
+const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
+
+const [showError,setShowError] = useState<JSX.Element | null>(null)
+const history = useHistory()
 
   const {
     register,
@@ -27,24 +31,25 @@ const FormOption = ({ firebase }: RegisterFormProps): JSX.Element => {
   const password = useRef({});
   password.current = watch('password', '');
 
-  if (location.pathname === '/logout') {
-    return (
-      <div className="loginPannel__wrapper">
-        <h3 className="loginPannel__title">Wylogowanie nastąpiło pomyślnie!</h3>
-        <DecorationImg scale={0.8} />
-        <LinkButton text="Strona Główna" link="/" size="medium" />
-      </div>
-    );
+  const createUser = (data : FormData) => {
+
+    firebase?.auth.createUserWithEmailAndPassword(data.email, data.password)
+    .then(userCredential => {
+      history.push('./swap-shop')
+      const user = userCredential.user
+    }).catch((error) => {
+      const errorMessage = error.message;
+      setShowError(<p className="error" style={{marginTop: 10}}>{errorMessage}</p> )
+    });
+  
   }
-  if (location.pathname === '/register') {
-    return <RegisterForm firebase={firebase} />;
-  }
+
   return (
     <form
-      onSubmit={handleSubmit((data) => console.log(JSON.stringify(data)))}
+      onSubmit={handleSubmit((data)=> createUser((data)))}
       className="loginPannel__wrapper"
     >
-      <h3 className="loginPannel__title">Zaloguj się</h3>
+      <h3 className="loginPannel__title">Załóż konto</h3>
       <DecorationImg mariginBottom={0} scale={0.8} />
       <div className="loginPannel__form">
         <label className="loginPannel__label" htmlFor="email">
@@ -85,11 +90,34 @@ const FormOption = ({ firebase }: RegisterFormProps): JSX.Element => {
             <p className="error">{errors.password.message}</p>
           )}
         </label>
+        <label className="loginPannel__label" htmlFor="password2">
+          Powtórz hasło
+          <input
+            className="loginPannel__input"
+            type="password"
+            {...register('password2', {
+              required: 'Hasło nie może być puste!',
+              minLength: {
+                value: 6,
+                message: 'Hasło musi mieć co najmniej 6 znaków!',
+              },
+              validate: (value) =>
+                value === password.current || 'Hasła nie są takie same!',
+            })}
+            style={
+              errors.password2 ? { borderBottom: '1px solid red' } : undefined
+            }
+          />
+          {errors.password2 && (
+            <p className="error">{errors.password2.message}</p>
+          )}
+        </label>
       </div>
+    {showError}
       <div className="loginPannel__send">
         <LinkButton
-          text="Załóż konto"
-          link="/register"
+          text="Zaloguj się"
+          link="/login"
           size="small"
           border="none"
         />
@@ -97,22 +125,11 @@ const FormOption = ({ firebase }: RegisterFormProps): JSX.Element => {
           type="submit"
           className="loginPannel__button link-button button-small"
         >
-          Zaloguj się
+          Załóż konto
         </button>
       </div>
     </form>
   );
-};
+}
 
-const LoginPannel = (): JSX.Element => {
-  const firebase = useContext(FirebaseContext);
-  return (
-    <Navigation>
-      <div className="loginPannel">
-        <FormOption firebase={firebase} />
-      </div>
-    </Navigation>
-  );
-};
-
-export default LoginPannel;
+export default RegisterForm;
