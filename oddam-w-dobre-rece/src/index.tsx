@@ -14,7 +14,7 @@ const App = () => (
       <Route path="/login" component={LoginPannel} />
       <Route path="/register" component={LoginPannel} />
       <Route path="/logout" component={LoginPannel} />
-      <Route path="/swap-shop" component={SwapShopPage}/>
+      <Route path="/swap-shop" component={SwapShopPage} />
     </FirebaseContext.Provider>
   </BrowserRouter>
 );

@@ -7,6 +7,7 @@ import DecorationImg from '../../components/shared/DecorationImg';
 import LinkButton from '../../components/shared/LinkButton/LinkButton';
 import { FirebaseContext } from '../../components/Firebase';
 import RegisterForm, { RegisterFormProps } from './RegisterForm';
+import LoginForm from './LoginForm';
 
 interface FormData {
   email: string;
@@ -39,69 +40,7 @@ const FormOption = ({ firebase }: RegisterFormProps): JSX.Element => {
   if (location.pathname === '/register') {
     return <RegisterForm firebase={firebase} />;
   }
-  return (
-    <form
-      onSubmit={handleSubmit((data) => console.log(JSON.stringify(data)))}
-      className="loginPannel__wrapper"
-    >
-      <h3 className="loginPannel__title">Zaloguj się</h3>
-      <DecorationImg mariginBottom={0} scale={0.8} />
-      <div className="loginPannel__form">
-        <label className="loginPannel__label" htmlFor="email">
-          Email
-          <input
-            className="loginPannel__input"
-            {...register('email', {
-              required: {
-                value: true,
-                message: 'Email nie może być pusty!',
-              },
-              pattern: {
-                value: reEmail,
-                message: 'Email jest nieprawidłowy!',
-              },
-            })}
-            style={errors.email ? { borderBottom: '1px solid red' } : undefined}
-          />
-          {errors.email && <p className="error">{errors.email.message}</p>}
-        </label>
-        <label className="loginPannel__label" htmlFor="password">
-          Hasło
-          <input
-            className="loginPannel__input"
-            type="password"
-            {...register('password', {
-              required: 'Hasło nie może być puste!',
-              minLength: {
-                value: 6,
-                message: 'Hasło musi mieć co najmniej 6 znaków!',
-              },
-            })}
-            style={
-              errors.password ? { borderBottom: '1px solid red' } : undefined
-            }
-          />
-          {errors.password && (
-            <p className="error">{errors.password.message}</p>
-          )}
-        </label>
-      </div>
-      <div className="loginPannel__send">
-        <LinkButton
-          text="Załóż konto"
-          link="/register"
-          size="small"
-          border="none"
-        />
-        <button
-          type="submit"
-          className="loginPannel__button link-button button-small"
-        >
-          Zaloguj się
-        </button>
-      </div>
-    </form>
-  );
+  return <LoginForm firebase={firebase} />;
 };
 
 const LoginPannel = (): JSX.Element => {

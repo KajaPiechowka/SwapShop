@@ -11,7 +11,7 @@ const Navigation = ({ children }: NavigationProps): JSX.Element => (
   <FirebaseContext.Consumer>
     {(firebase) => (
       <div className="container">
-        <HomeHeader user={firebase?.auth.currentUser?.email} />
+        <HomeHeader firebase={firebase} />
         <NavigationMenu />
         {children}
       </div>

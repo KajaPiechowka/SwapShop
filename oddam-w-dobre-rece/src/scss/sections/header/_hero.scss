@@ -5,10 +5,19 @@
   display: flex;
   position: relative;
 }
-.hero-image {
+.hero-image-main {
   width: 50%;
   height: 100vh;
   background-image: url('../../../assets/images/HeroImage.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right 0;
+}
+
+.hero-image-aside {
+  width: 55%;
+  height: 100vh;
+  background-image: url('../../../assets/images/Form-Hero-Image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right 0;

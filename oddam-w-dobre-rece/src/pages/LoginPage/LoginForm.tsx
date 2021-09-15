@@ -12,11 +12,11 @@ interface FormData {
   password2?: string;
 }
 
-export interface RegisterFormProps {
+export interface LoginFormProps {
   firebase: Firebase | null;
 }
 
-const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
+const LoginForm = ({ firebase }: LoginFormProps): JSX.Element => {
   const [showError, setShowError] = useState<JSX.Element | null>(null);
   const history = useHistory();
 
@@ -30,9 +30,9 @@ const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
   const password = useRef({});
   password.current = watch('password', '');
 
-  const createUser = (data: FormData) => {
+  const loginUser = (data: FormData) => {
     firebase?.auth
-      .createUserWithEmailAndPassword(data.email, data.password)
+      .signInWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
         history.push('/swap-shop');
         const user = userCredential.user;
@@ -49,10 +49,10 @@ const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => createUser(data))}
+      onSubmit={handleSubmit((data) => loginUser(data))}
       className="loginPannel__wrapper"
     >
-      <h3 className="loginPannel__title">Załóż konto</h3>
+      <h3 className="loginPannel__title">Zaloguj się</h3>
       <DecorationImg mariginBottom={0} scale={0.8} />
       <div className="loginPannel__form">
         <label className="loginPannel__label" htmlFor="email">
@@ -93,34 +93,12 @@ const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
             <p className="error">{errors.password.message}</p>
           )}
         </label>
-        <label className="loginPannel__label" htmlFor="password2">
-          Powtórz hasło
-          <input
-            className="loginPannel__input"
-            type="password"
-            {...register('password2', {
-              required: 'Hasło nie może być puste!',
-              minLength: {
-                value: 6,
-                message: 'Hasło musi mieć co najmniej 6 znaków!',
-              },
-              validate: (value) =>
-                value === password.current || 'Hasła nie są takie same!',
-            })}
-            style={
-              errors.password2 ? { borderBottom: '1px solid red' } : undefined
-            }
-          />
-          {errors.password2 && (
-            <p className="error">{errors.password2.message}</p>
-          )}
-        </label>
       </div>
       {showError}
       <div className="loginPannel__send">
         <LinkButton
-          text="Zaloguj się"
-          link="/login"
+          text="Załóż konto"
+          link="/register"
           size="small"
           border="none"
         />
@@ -128,11 +106,11 @@ const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
           type="submit"
           className="loginPannel__button link-button button-small"
         >
-          Załóż konto
+          Zaloguj się
         </button>
       </div>
     </form>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
