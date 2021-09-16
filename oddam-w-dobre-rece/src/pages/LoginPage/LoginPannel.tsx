@@ -32,7 +32,7 @@ const FormOption = ({ firebase }: RegisterFormProps): JSX.Element => {
     return (
       <div className="loginPannel__wrapper">
         <h3 className="loginPannel__title">Wylogowanie nastąpiło pomyślnie!</h3>
-        <DecorationImg scale={0.8} />
+        <DecorationImg scale={0.8} mariginBottom={55} />
         <LinkButton text="Strona Główna" link="/" size="medium" />
       </div>
     );

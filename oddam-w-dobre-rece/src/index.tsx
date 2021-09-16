@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage/HomePage';
 import LoginPannel from './pages/LoginPage/LoginPannel';
 import './scss/main.scss';
 import Firebase, { FirebaseContext } from './components/Firebase';
-import SwapShopPage from './pages/SwapShopPage/SwapShopPage';
+import GiveAwayPage from './pages/GiveAwayPage/GiveAwayPage';
 
 const App = () => (
   <BrowserRouter>
@@ -14,7 +14,7 @@ const App = () => (
       <Route path="/login" component={LoginPannel} />
       <Route path="/register" component={LoginPannel} />
       <Route path="/logout" component={LoginPannel} />
-      <Route path="/swap-shop" component={SwapShopPage} />
+      <Route path="/oddaj-rzeczy" component={GiveAwayPage} />
     </FirebaseContext.Provider>
   </BrowserRouter>
 );

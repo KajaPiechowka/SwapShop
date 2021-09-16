@@ -34,7 +34,7 @@ const LoginForm = ({ firebase }: LoginFormProps): JSX.Element => {
     firebase?.auth
       .signInWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
-        history.push('/swap-shop');
+        history.push('/oddaj-rzeczy');
         const user = userCredential.user;
       })
       .catch((error) => {

@@ -34,7 +34,7 @@ const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
     firebase?.auth
       .createUserWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
-        history.push('/swap-shop');
+        history.push('/oddaj-rzeczy');
         const user = userCredential.user;
       })
       .catch((error) => {

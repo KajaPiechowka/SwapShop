@@ -36,7 +36,7 @@ const HomeHeader = ({ firebase }: HomeHeaderProps): JSX.Element => {
           <li className="loginWrapper__list-animated">
             <Link
               className="loginWrapper__link loginWrapper__link-yellow"
-              to="/swap-shop"
+              to="/oddaj-rzeczy"
             >
               Oddaj Rzeczy
             </Link>
