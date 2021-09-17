@@ -7,7 +7,82 @@
 .give-away {
   width: 100%;
   height: 100vh;
+  padding-left: 100px;
+  padding-top: 30px;
   background: url('../../../assets/images/Background-Form.jpg') no-repeat;
   background-position: right bottom;
   background-size: cover;
+  &__step-couter {
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  &__form {
+    width: 50%;
+  }
+  &__form-content {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__form-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: black;
+  }
+  &__input-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &:checked ~ .give-away__checkmark {
+      color: $color-yellow;
+    }
+  }
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background-color: inherit;
+    border: 1px solid $color-text-main;
+  }
+  &__label {
+    font-size: 22px;
+    color: $color-text-main;
+    position: relative;
+    padding-left: 50px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:hover input ~ .give-away__checkmark {
+      background-color: white;
+    }
+    &:active input ~ .give-away__checkmark {
+      background-color: $color-yellow;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+  &__select {
+    height: 35px;
+    width: 200px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+    background-color: inherit;
+    color: $color-text-main;
+    option {
+      background-color: inherit;
+    }
+  }
 }
