@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -5,19 +6,23 @@ interface LinkButtonProps {
   text: string;
   link: string;
   size: 'small' | 'medium' | 'big';
-  border?: string | undefined;
+  noBorder?: true | undefined;
+  color?: string | undefined;
 }
 
 const LinkButton = ({
   text,
   link,
   size,
-  border,
+  noBorder,
+  color,
 }: LinkButtonProps): JSX.Element => (
   <Link
-    className={`link-button button-${size}`}
+    className={classNames(`link-button button-${size}`, {
+      'no-border': noBorder,
+    })}
     to={link}
-    style={border ? { border: border } : undefined}
+    style={color ? { backgroundColor: color } : undefined}
   >
     {text}
   </Link>

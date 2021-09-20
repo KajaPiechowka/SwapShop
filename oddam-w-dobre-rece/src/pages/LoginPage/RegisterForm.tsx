@@ -118,12 +118,7 @@ const RegisterForm = ({ firebase }: RegisterFormProps): JSX.Element => {
       </div>
       {showError}
       <div className="loginPannel__send">
-        <LinkButton
-          text="Zaloguj się"
-          link="/login"
-          size="small"
-          border="none"
-        />
+        <LinkButton text="Zaloguj się" link="/login" size="small" noBorder />
         <button
           type="submit"
           className="loginPannel__button link-button button-small"

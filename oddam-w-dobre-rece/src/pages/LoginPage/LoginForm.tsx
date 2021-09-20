@@ -96,12 +96,7 @@ const LoginForm = ({ firebase }: LoginFormProps): JSX.Element => {
       </div>
       {showError}
       <div className="loginPannel__send">
-        <LinkButton
-          text="Załóż konto"
-          link="/register"
-          size="small"
-          border="none"
-        />
+        <LinkButton text="Załóż konto" link="/register" size="small" noBorder />
         <button
           type="submit"
           className="loginPannel__button link-button button-small"

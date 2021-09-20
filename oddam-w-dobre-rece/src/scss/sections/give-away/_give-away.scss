@@ -79,10 +79,15 @@
     width: 200px;
     margin-bottom: 200px;
     margin-left: 20px;
-    background-color: inherit;
+    background-color: $color-background-lightgray;
     color: $color-text-main;
     option {
       background-color: inherit;
+      width: 30%;
     }
   }
+}
+
+.background-inherit {
+  background-color: inherit;
 }

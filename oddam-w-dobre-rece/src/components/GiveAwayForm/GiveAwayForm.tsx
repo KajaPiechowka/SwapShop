@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import ImportantInfo from './ImportantInfo';
 
-const whatToGiveArray = [
-  'ubrania, które nadają się do podobnego użycia',
-  'ubrania, do wyrzucenia',
-  'zabawki',
-  'książki',
-  'inne',
-];
+import { whatToGiveArray } from './formData.mock';
+import ImportantInfo from './ImportantInfo';
 
 interface FormData {
   whatToGive: string;
   bagsCount: 1 | 2 | 3 | 4 | 5;
+  location: 'Poznań' | 'Warszawa' | 'Kraków' | 'Wrocław' | 'Katowice';
 }
 
 const GiveAwayForm = (): JSX.Element => {
@@ -53,7 +48,7 @@ const GiveAwayForm = (): JSX.Element => {
             <button
               style={{ marginTop: '60px' }}
               type="button"
-              className="link-button button-medium"
+              className="link-button button-medium background-inherit"
               onClick={goToNext}
             >
               Dalej
@@ -74,7 +69,10 @@ const GiveAwayForm = (): JSX.Element => {
                 name="bagsCount"
                 className="give-away__select"
               >
-                <option value="">--wybierz--</option>
+                <option value="" disabled selected style={{ display: 'none' }}>
+                  --wybierz--
+                </option>
+
                 <option value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>
@@ -82,17 +80,18 @@ const GiveAwayForm = (): JSX.Element => {
                 <option value={5}>5</option>
               </select>
             </label>
+
             <div className="give-away__buttons">
               <button
                 type="button"
-                className="link-button button-medium"
+                className="link-button button-medium background-inherit"
                 onClick={goToPrev}
               >
                 Wstecz
               </button>
               <button
                 type="button"
-                className="link-button button-medium"
+                className="link-button button-medium background-inherit"
                 onClick={goToNext}
               >
                 Dalej
