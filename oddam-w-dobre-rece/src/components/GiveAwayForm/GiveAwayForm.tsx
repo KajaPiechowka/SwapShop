@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Select from '../shared/Select/Select';
 
-import { whatToGiveArray } from './formData.mock';
+import {
+  helpGroupsArray,
+  locationArray,
+  whatToGiveArray,
+} from './formData.mock';
 import ImportantInfo from './ImportantInfo';
 
 interface FormData {
   whatToGive: string;
   bagsCount: 1 | 2 | 3 | 4 | 5;
   location: 'Poznań' | 'Warszawa' | 'Kraków' | 'Wrocław' | 'Katowice';
+  helpGroups: Partial<typeof helpGroupsArray>;
 }
 
 const GiveAwayForm = (): JSX.Element => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [savedFormData, setSavedFormData] = useState({ whatToGive: '' });
+  const [savedFormData, setSavedFormData] = useState({
+    whatToGive: '',
+    bagsCount: 0,
+    location: '',
+  });
   const {
     register,
     handleSubmit,
@@ -62,23 +72,35 @@ const GiveAwayForm = (): JSX.Element => {
               Podaj liczbę 60l worków, w które spakowałeś/łaś rzeczy:
             </h3>
 
-            <label htmlFor="bagsCount" className="give-away__label">
+            <label htmlFor="bagsCount" className="select__label flex">
               Liczba 60l. worków:
-              <select
-                {...register('bagsCount')}
+              <Select
+                options={['1', '2', '3', '4', '5']}
                 name="bagsCount"
-                className="give-away__select"
-              >
-                <option value="" disabled selected style={{ display: 'none' }}>
-                  --wybierz--
-                </option>
+                register={register}
+              />
+              {/* <div className="give-away__select">
+                <select
+                  {...register('bagsCount')}
+                  name="bagsCount"
+                  className="give-away__select"
+                >
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    style={{ display: 'none' }}
+                  >
+                    --wybierz--
+                  </option>
 
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
-                <option value={5}>5</option>
-              </select>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                  <option value={4}>4</option>
+                  <option value={5}>5</option>
+                </select>
+              </div> */}
             </label>
 
             <div className="give-away__buttons">
@@ -100,7 +122,41 @@ const GiveAwayForm = (): JSX.Element => {
           </div>
         );
       case 3:
-        return <div>Step 3</div>;
+        return (
+          <div className="give-away__form-content">
+            <h3 className="give-away__form-title">Lokalizacja:</h3>
+            <Select
+              options={locationArray}
+              name="location"
+              register={register}
+            />
+            <div className="help-groups">
+              <h5>Komu chcesz pomóc? </h5>
+              {helpGroupsArray.map((group) => (
+                <label htmlFor="helpGroups">
+                  {group}
+                  <input type="checkbox" {...register('helpGroups')} />
+                </label>
+              ))}
+            </div>
+            <div className="give-away__buttons">
+              <button
+                type="button"
+                className="link-button button-medium background-inherit"
+                onClick={goToPrev}
+              >
+                Wstecz
+              </button>
+              <button
+                type="button"
+                className="link-button button-medium background-inherit"
+                onClick={goToNext}
+              >
+                Dalej
+              </button>
+            </div>
+          </div>
+        );
       case 4:
         return <div>Step 4</div>;
       default:

@@ -13,3 +13,11 @@ export const locationArray = [
   'Wrocław',
   'Katowice',
 ];
+
+export const helpGroupsArray = [
+  'dzieciom',
+  'samotnym matkom',
+  'bezdomnym',
+  'niepełnosprawnym',
+  'osobom starszym',
+];

@@ -1,0 +1,61 @@
+.select {
+  height: 35px;
+  width: 200px;
+  margin-bottom: 200px;
+  margin-left: 20px;
+  background-color: $color-background-lightgray;
+  color: $color-text-main;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid $color-text-main;
+  line-height: 30px;
+  padding-left: 5px;
+  &__label {
+    font-size: 22px;
+    color: $color-text-main;
+    line-height: 30px;
+  }
+  &__classic {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    // Additional resets for further consistency
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0 10px 5px 10px;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    option {
+      background-color: $color-background-lightgray;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-yellow;
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    width: 40px;
+    height: 20px;
+    background-image: url('../../assets/icons/Icon-Arrow-Down.svg');
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    cursor: pointer;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
