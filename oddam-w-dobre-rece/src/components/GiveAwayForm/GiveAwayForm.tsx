@@ -14,6 +14,14 @@ interface FormData {
   bagsCount: 1 | 2 | 3 | 4 | 5;
   location: 'Poznań' | 'Warszawa' | 'Kraków' | 'Wrocław' | 'Katowice';
   helpGroups: Partial<typeof helpGroupsArray>;
+  customHelpGroups?: string;
+  street: string;
+  city: string;
+  postCode: string;
+  phoneNumber: number;
+  date: string;
+  hour: string;
+  message: string;
 }
 
 const GiveAwayForm = (): JSX.Element => {
@@ -79,28 +87,7 @@ const GiveAwayForm = (): JSX.Element => {
                 name="bagsCount"
                 register={register}
               />
-              {/* <div className="give-away__select">
-                <select
-                  {...register('bagsCount')}
-                  name="bagsCount"
-                  className="give-away__select"
-                >
-                  <option
-                    value=""
-                    disabled
-                    selected
-                    style={{ display: 'none' }}
-                  >
-                    --wybierz--
-                  </option>
-
-                  <option value={1}>1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                </select>
-              </div> */}
+              {}
             </label>
 
             <div className="give-away__buttons">
@@ -131,13 +118,26 @@ const GiveAwayForm = (): JSX.Element => {
               register={register}
             />
             <div className="help-groups">
-              <h5>Komu chcesz pomóc? </h5>
-              {helpGroupsArray.map((group) => (
-                <label htmlFor="helpGroups">
-                  {group}
-                  <input type="checkbox" {...register('helpGroups')} />
-                </label>
-              ))}
+              <p className="help-groups__label">Komu chcesz pomóc? </p>
+              <div className="help-groups__checkboxes">
+                {helpGroupsArray.map((group) => (
+                  <label
+                    htmlFor="helpGroups"
+                    className="help-groups__checkbox-label"
+                  >
+                    {group}
+                    <input
+                      className="help-groups__checkbox"
+                      type="checkbox"
+                      {...register('helpGroups')}
+                    />
+                  </label>
+                ))}
+              </div>
+              <label htmlFor="customHelpGroups" className="help-groups__label">
+                Wpisz nazwę konkretnej organizacji (opcjonalne)
+                <input {...register('customHelpGroups')} type="text" />
+              </label>
             </div>
             <div className="give-away__buttons">
               <button
@@ -158,9 +158,127 @@ const GiveAwayForm = (): JSX.Element => {
           </div>
         );
       case 4:
-        return <div>Step 4</div>;
+        return (
+          <div className="give-away__form-content">
+            <h3 className="give-away__form-title">
+              Podaj adres oraz termin odbioru rzeczy przez kuriera
+            </h3>
+            <div className="personal-data">
+              <div className="personal-data__wrapper">
+                <p>Adres odbioru:</p>
+                <label htmlFor="street">
+                  <p> Ulica</p>
+                  <input type="text" {...register('street')} />
+                </label>
+                <label htmlFor="city">
+                  <p> Miasto</p>
+                  <input type="text" {...register('city')} />
+                </label>
+                <label htmlFor="postCode">
+                  <p> Kod pocztowy</p>
+                  <input type="text" {...register('postCode')} />
+                </label>
+                <label htmlFor="phoneNumber">
+                  <p> Numer telefonu</p>
+                  <input type="tel" {...register('phoneNumber')} />
+                </label>
+              </div>
+              <div className="personal-data__wrapper">
+                <p>Termin odbioru:</p>
+                <label htmlFor="date">
+                  <p>Data</p>
+                  <input type="date" {...register('date')} />
+                </label>
+                <label htmlFor="hour">
+                  <p>Godzina</p>
+                  <input type="time" {...register('hour')} />
+                </label>
+                <label htmlFor="message">
+                  <p> Uwagi dla kuriera</p>
+                  <textarea {...register('message')} />
+                </label>
+              </div>
+            </div>
+
+            <div className="give-away__buttons">
+              <button
+                type="button"
+                className="link-button button-medium background-inherit"
+                onClick={goToPrev}
+              >
+                Wstecz
+              </button>
+              <button
+                type="button"
+                className="link-button button-medium background-inherit"
+                onClick={goToNext}
+              >
+                Dalej
+              </button>
+            </div>
+          </div>
+        );
       default:
-        return <div>Deafault</div>;
+        return (
+          <div className="give-away__form-content">
+            <h3 className="give-away__form-title">
+              Podaj adres oraz termin odbioru rzeczy przez kuriera
+            </h3>
+            <div className="personal-data">
+              <div className="personal-data__wrapper">
+                <p>Adres odbioru:</p>
+                <label htmlFor="street">
+                  <p> Ulica</p>
+                  <input type="text" {...register('street')} />
+                </label>
+                <label htmlFor="city">
+                  <p> Miasto</p>
+                  <input type="text" {...register('city')} />
+                </label>
+                <label htmlFor="postCode">
+                  <p> Kod pocztowy</p>
+                  <input type="text" {...register('postCode')} />
+                </label>
+                <label htmlFor="phoneNumber">
+                  <p> Numer telefonu</p>
+                  <input type="tel" {...register('phoneNumber')} />
+                </label>
+              </div>
+              <div className="personal-data__wrapper">
+                <p>Termin odbioru:</p>
+                <label htmlFor="date">
+                  <p>Data</p>
+                  <input type="date" {...register('date')} />
+                </label>
+                <label htmlFor="hour">
+                  <p>Godzina</p>
+                  <input type="time" {...register('hour')} />
+                </label>
+                <label htmlFor="message">
+                  <p> Uwagi dla kuriera</p>
+                  <textarea {...register('message')} />
+                </label>
+              </div>
+            </div>
+
+            <div className="give-away__buttons">
+              <button
+                type="button"
+                className="link-button button-medium background-inherit"
+                onClick={goToPrev}
+              >
+                Wstecz
+              </button>
+              <button
+                type="button"
+                className="link-button button-medium background-inherit"
+                onClick={goToNext}
+              >
+                Dalej
+              </button>
+            </div>
+          </div>
+        );
     }
   };
 
@@ -168,7 +286,11 @@ const GiveAwayForm = (): JSX.Element => {
     <div className="container form-container">
       <ImportantInfo />
       <div className="give-away">
-        <p className="give-away__step-couter">Krok {currentStep}/4</p>
+        {currentStep > 4 ? (
+          <p className="give-away__step-couter"> </p>
+        ) : (
+          <p className="give-away__step-couter">Krok {currentStep}/4</p>
+        )}
         <form
           className="give-away__form"
           onSubmit={handleSubmit((data) => console.log(data))}

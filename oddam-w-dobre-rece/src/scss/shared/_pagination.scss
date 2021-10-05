@@ -18,9 +18,9 @@
     height: 40px;
     width: 30px;
     color: $color-text-main;
-    @include buttonAnimation
+    @include buttonAnimation;
   }
   .active {
-    border: 1px solid $color-text-main;
+    border: 0.75px solid $color-text-main;
   }
 }
