@@ -1,22 +1,29 @@
 import React from 'react';
 import { FieldValues } from 'react-hook-form';
+import classNames from 'classnames';
 
 interface SelectProps
   extends Partial<Pick<FieldValues, 'register' | 'errors'>> {
   options: string[];
   name: string;
   register: any;
+  className?: string;
 }
 
 const Select = ({
   register,
   options,
   name,
+  className,
   ...rest
 }: SelectProps): JSX.Element => {
   return (
     <div className="select">
-      <select {...register(name)} className="select__classic" defaultValue="">
+      <select
+        {...register(name)}
+        className={classNames('select__classic', { className: `${className}` })}
+        defaultValue=""
+      >
         <option
           className="select__option"
           value=""

@@ -73,6 +73,11 @@
     align-items: center;
     width: 60%;
   }
+  &__img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
 }
 
 .background-inherit {
@@ -152,6 +157,30 @@
         border: 0.75px solid $color-text-main;
         min-width: 80px;
       }
+    }
+  }
+}
+
+.summary {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+  }
+  p {
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  &__label {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  &__row {
+    span {
+      margin-right: 5px;
     }
   }
 }
