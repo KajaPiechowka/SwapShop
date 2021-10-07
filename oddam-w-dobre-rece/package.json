@@ -1,7 +1,7 @@
 {
   "name": "oddam-w-dobre-rece",
   "version": "0.0.2",
-  "homepage": "http://KajaPiechowka.github.io/oddam-w-dobre-rece",
+  "homepage": "http://KajaPiechowka.github.io/SwapShop",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.15.0",
