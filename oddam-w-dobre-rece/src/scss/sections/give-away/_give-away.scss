@@ -170,9 +170,16 @@
     flex-direction: column;
     height: 200px;
   }
-  p {
-    font-weight: 300;
+  &__text {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    p {
+      max-width: 70px;
+    }
+    span {
+      margin-left: 40px;
+    }
   }
   &__label {
     font-weight: 600;
@@ -180,7 +187,16 @@
   }
   &__row {
     span {
-      margin-right: 5px;
+      margin-left: 10px;
     }
+  }
+}
+.summary {
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 300;
   }
 }

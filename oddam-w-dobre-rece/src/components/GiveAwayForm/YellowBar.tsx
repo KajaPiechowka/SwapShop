@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImportantInfo = (): JSX.Element => (
+const YellowBar = (): JSX.Element => (
   <div className="important-info">
     <h4>Ważne!</h4>
     <p>
@@ -9,4 +9,4 @@ const ImportantInfo = (): JSX.Element => (
   </div>
 );
 
-export default ImportantInfo;
+export default YellowBar;

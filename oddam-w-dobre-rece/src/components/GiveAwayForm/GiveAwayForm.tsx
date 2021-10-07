@@ -8,8 +8,10 @@ import {
   helpGroupsArray,
   locationArray,
   whatToGiveArray,
-} from './formData.mock';
-import ImportantInfo from './ImportantInfo';
+} from '../../assets/mocks/formData.mock';
+import YellowBar from './YellowBar';
+import NavigationButtons from '../shared/NavigationButtons/NavigationButtons';
+import DecorationImg from '../shared/DecorationImg';
 
 interface FormData {
   whatToGive: string;
@@ -31,21 +33,18 @@ interface FormData {
   message: string;
 }
 
-interface ShowUserFormDataProps {
+interface SummaryProps {
   data: FormData;
   prevFunction: () => void;
 }
 
-const ShowUserFormData = ({
-  data,
-  prevFunction,
-}: ShowUserFormDataProps): JSX.Element => (
+const Summary = ({ data, prevFunction }: SummaryProps): JSX.Element => (
   <div className="give-away__form-content">
     <h3 className="give-away__form-title">Podsumowanie Twojej darowizny</h3>
     <p className="summary__label">Oddajesz: </p>
     <div className="summary__row">
       <img className="give-away__img" src={TShirt} alt="T-Shirt" />
-      <span>{data.bagsCount},</span>
+      <span>{data.bagsCount} worki,</span>
       <span>{data.whatToGive},</span>
       <span>{data.helpGroups}</span>
     </div>
@@ -57,58 +56,47 @@ const ShowUserFormData = ({
     <div className="summary">
       <div className="summary__wrapper">
         <span className="summary__label">Adres odbioru:</span>
-        <p>
-          Ulica <span>{data.street}</span>
-        </p>
-
-        <p>
-          Miasto
+        <div className="summary__text">
+          <p>Ulica </p> <span>{data.street}</span>
+        </div>
+        <div className="summary__text">
+          <p>Miasto</p>
           <span>{data.city}</span>
-        </p>
+        </div>
 
-        <p>
-          Kod pocztowy
+        <div className="summary__text">
+          <p>Kod pocztowy</p>
           <span>{data.postCode}</span>
-        </p>
+        </div>
 
-        <p>
-          Numer telefonu
+        <div className="summary__text">
+          <p>Numer telefonu</p>
           <span>{data.phoneNumber}</span>
-        </p>
+        </div>
       </div>
       <div className="summary__wrapper">
         <span className="summary__label">Termin odbioru:</span>
-        <p>
-          Data
+        <div className="summary__text">
+          <p>Data</p>
           <span>{data.date}</span>
-        </p>
+        </div>
 
-        <p>
-          Godzina
+        <div className="summary__text">
+          <p>Godzina</p>
           <span>{data.hour}</span>
-        </p>
+        </div>
 
-        <p>
-          Uwagi dla kuriera
+        <div className="summary__text">
+          <p>Uwagi dla kuriera</p>
           <span>{data.message}</span>
-        </p>
+        </div>
       </div>
     </div>
-    <div className="give-away__buttons">
-      <button
-        type="button"
-        className="link-button button-medium background-inherit"
-        onClick={prevFunction}
-      >
-        Wstecz
-      </button>
-      <button
-        type="button"
-        className="link-button button-medium background-inherit"
-      >
-        Potwierdzam
-      </button>
-    </div>
+    <NavigationButtons
+      actionNext={() => console.log('koniec')}
+      actionPrev={prevFunction}
+      nextText="Potwierdzam"
+    />
   </div>
 );
 
@@ -135,7 +123,7 @@ const GiveAwayForm = (): JSX.Element => {
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
-      whatToGive: '',
+      whatToGive: 'zabawki',
       bagsCount: 1,
       location: 'Warszawa',
       helpGroups: 'dzieciom',
@@ -160,6 +148,7 @@ const GiveAwayForm = (): JSX.Element => {
   const onSubmit = (data: FormData): void => {
     console.log(data);
     setFormData(data);
+    goToNext();
   };
 
   const renderSwitch = (): JSX.Element => {
@@ -209,22 +198,7 @@ const GiveAwayForm = (): JSX.Element => {
               {}
             </label>
 
-            <div className="give-away__buttons">
-              <button
-                type="button"
-                className="link-button button-medium background-inherit"
-                onClick={goToPrev}
-              >
-                Wstecz
-              </button>
-              <button
-                type="button"
-                className="link-button button-medium background-inherit"
-                onClick={goToNext}
-              >
-                Dalej
-              </button>
-            </div>
+            <NavigationButtons actionNext={goToNext} actionPrev={goToPrev} />
           </div>
         );
       case 3:
@@ -258,22 +232,7 @@ const GiveAwayForm = (): JSX.Element => {
                 <input {...register('customHelpGroups')} type="text" />
               </label>
             </div>
-            <div className="give-away__buttons">
-              <button
-                type="button"
-                className="link-button button-medium background-inherit"
-                onClick={goToPrev}
-              >
-                Wstecz
-              </button>
-              <button
-                type="button"
-                className="link-button button-medium background-inherit"
-                onClick={goToNext}
-              >
-                Dalej
-              </button>
-            </div>
+            <NavigationButtons actionNext={goToNext} actionPrev={goToPrev} />
           </div>
         );
       case 4:
@@ -319,32 +278,28 @@ const GiveAwayForm = (): JSX.Element => {
               </div>
             </div>
 
-            <div className="give-away__buttons">
-              <button
-                type="button"
-                className="link-button button-medium background-inherit"
-                onClick={goToPrev}
-              >
-                Wstecz
-              </button>
-              <button
-                type="submit"
-                className="link-button button-medium background-inherit"
-                onClick={goToNext}
-              >
-                Dalej
-              </button>
-            </div>
+            <NavigationButtons actionPrev={goToPrev} submit={true} />
           </div>
         );
+      case 5:
+        return (
+          <div className="give-away__form-content summary">
+            <h2>
+              Dziękujemy za przesłanie fromularza. Na maila prześlemy wszelkie
+              informacje o odbiorze.
+            </h2>
+            <DecorationImg />
+          </div>
+        );
+
       default:
-        return <ShowUserFormData data={formData} prevFunction={goToPrev} />;
+        return <Summary data={formData} prevFunction={goToPrev} />;
     }
   };
 
   return (
     <div className="container form-container">
-      {currentStep > 4 ? null : <ImportantInfo />}
+      {currentStep > 4 ? null : <YellowBar />}
       <div className="give-away">
         {currentStep > 4 ? (
           <p className="give-away__step-couter"> </p>

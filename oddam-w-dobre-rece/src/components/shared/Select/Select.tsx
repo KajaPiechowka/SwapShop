@@ -21,7 +21,7 @@ const Select = ({
     <div className="select">
       <select
         {...register(name)}
-        className={classNames('select__classic', { className: `${className}` })}
+        className={classNames('select__classic', className)}
         defaultValue=""
       >
         <option
