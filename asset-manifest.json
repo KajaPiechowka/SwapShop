@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/SwapShop/static/css/main.dfb467b2.chunk.css",
-    "main.js": "/SwapShop/static/js/main.7c391f76.chunk.js",
-    "main.js.map": "/SwapShop/static/js/main.7c391f76.chunk.js.map",
-    "runtime-main.js": "/SwapShop/static/js/runtime-main.6f1ad370.js",
-    "runtime-main.js.map": "/SwapShop/static/js/runtime-main.6f1ad370.js.map",
-    "static/js/2.6fe65803.chunk.js": "/SwapShop/static/js/2.6fe65803.chunk.js",
-    "static/js/2.6fe65803.chunk.js.map": "/SwapShop/static/js/2.6fe65803.chunk.js.map",
-    "index.html": "/SwapShop/index.html",
-    "static/css/main.dfb467b2.chunk.css.map": "/SwapShop/static/css/main.dfb467b2.chunk.css.map",
-    "static/js/2.6fe65803.chunk.js.LICENSE.txt": "/SwapShop/static/js/2.6fe65803.chunk.js.LICENSE.txt",
-    "static/media/main.scss": "/SwapShop/static/media/Icon-Arrow-Down.2c792a10.svg",
-    "static/media/Decoration.1172adb4.svg": "/SwapShop/static/media/Decoration.1172adb4.svg",
-    "static/media/Facebook.1c1ea3ae.svg": "/SwapShop/static/media/Facebook.1c1ea3ae.svg",
-    "static/media/Instagram.5b663cf3.svg": "/SwapShop/static/media/Instagram.5b663cf3.svg",
-    "static/media/Signature.c2a96569.svg": "/SwapShop/static/media/Signature.c2a96569.svg"
+    "main.css": "/SwapShop/build/static/css/main.7915784f.chunk.css",
+    "main.js": "/SwapShop/build/static/js/main.7c391f76.chunk.js",
+    "main.js.map": "/SwapShop/build/static/js/main.7c391f76.chunk.js.map",
+    "runtime-main.js": "/SwapShop/build/static/js/runtime-main.1c5e5e79.js",
+    "runtime-main.js.map": "/SwapShop/build/static/js/runtime-main.1c5e5e79.js.map",
+    "static/js/2.6fe65803.chunk.js": "/SwapShop/build/static/js/2.6fe65803.chunk.js",
+    "static/js/2.6fe65803.chunk.js.map": "/SwapShop/build/static/js/2.6fe65803.chunk.js.map",
+    "index.html": "/SwapShop/build/index.html",
+    "static/css/main.7915784f.chunk.css.map": "/SwapShop/build/static/css/main.7915784f.chunk.css.map",
+    "static/js/2.6fe65803.chunk.js.LICENSE.txt": "/SwapShop/build/static/js/2.6fe65803.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/SwapShop/build/static/media/Icon-Arrow-Down.2c792a10.svg",
+    "static/media/Decoration.1172adb4.svg": "/SwapShop/build/static/media/Decoration.1172adb4.svg",
+    "static/media/Facebook.1c1ea3ae.svg": "/SwapShop/build/static/media/Facebook.1c1ea3ae.svg",
+    "static/media/Instagram.5b663cf3.svg": "/SwapShop/build/static/media/Instagram.5b663cf3.svg",
+    "static/media/Signature.c2a96569.svg": "/SwapShop/build/static/media/Signature.c2a96569.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6f1ad370.js",
+    "static/js/runtime-main.1c5e5e79.js",
     "static/js/2.6fe65803.chunk.js",
-    "static/css/main.dfb467b2.chunk.css",
+    "static/css/main.7915784f.chunk.css",
     "static/js/main.7c391f76.chunk.js"
   ]
 }
