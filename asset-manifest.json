@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SwapShop/static/css/main.dfb467b2.chunk.css",
-    "main.js": "/SwapShop/static/js/main.60cae5fb.chunk.js",
-    "main.js.map": "/SwapShop/static/js/main.60cae5fb.chunk.js.map",
+    "main.js": "/SwapShop/static/js/main.7c391f76.chunk.js",
+    "main.js.map": "/SwapShop/static/js/main.7c391f76.chunk.js.map",
     "runtime-main.js": "/SwapShop/static/js/runtime-main.6f1ad370.js",
     "runtime-main.js.map": "/SwapShop/static/js/runtime-main.6f1ad370.js.map",
-    "static/js/2.c9911003.chunk.js": "/SwapShop/static/js/2.c9911003.chunk.js",
-    "static/js/2.c9911003.chunk.js.map": "/SwapShop/static/js/2.c9911003.chunk.js.map",
+    "static/js/2.6fe65803.chunk.js": "/SwapShop/static/js/2.6fe65803.chunk.js",
+    "static/js/2.6fe65803.chunk.js.map": "/SwapShop/static/js/2.6fe65803.chunk.js.map",
     "index.html": "/SwapShop/index.html",
     "static/css/main.dfb467b2.chunk.css.map": "/SwapShop/static/css/main.dfb467b2.chunk.css.map",
-    "static/js/2.c9911003.chunk.js.LICENSE.txt": "/SwapShop/static/js/2.c9911003.chunk.js.LICENSE.txt",
+    "static/js/2.6fe65803.chunk.js.LICENSE.txt": "/SwapShop/static/js/2.6fe65803.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/SwapShop/static/media/Icon-Arrow-Down.2c792a10.svg",
     "static/media/Decoration.1172adb4.svg": "/SwapShop/static/media/Decoration.1172adb4.svg",
     "static/media/Facebook.1c1ea3ae.svg": "/SwapShop/static/media/Facebook.1c1ea3ae.svg",
@@ -18,8 +18,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6f1ad370.js",
-    "static/js/2.c9911003.chunk.js",
+    "static/js/2.6fe65803.chunk.js",
     "static/css/main.dfb467b2.chunk.css",
-    "static/js/main.60cae5fb.chunk.js"
+    "static/js/main.7c391f76.chunk.js"
   ]
 }
