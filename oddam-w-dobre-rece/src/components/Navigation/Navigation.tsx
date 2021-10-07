@@ -1,4 +1,5 @@
 import React from 'react';
+import Firebase, { FirebaseContext } from '../Firebase';
 import HomeHeader from '../Home/HomeHeader';
 import NavigationMenu from '../Home/NavigationMenu';
 
@@ -7,11 +8,15 @@ interface NavigationProps {
 }
 
 const Navigation = ({ children }: NavigationProps): JSX.Element => (
-  <div className="container">
-    <HomeHeader />
-    <NavigationMenu />
-    {children}
-  </div>
+  <FirebaseContext.Consumer>
+    {(firebase) => (
+      <div className="container">
+        <HomeHeader firebase={firebase} />
+        <NavigationMenu />
+        {children}
+      </div>
+    )}
+  </FirebaseContext.Consumer>
 );
 
-export default Navigation;
+export default React.memo(Navigation);

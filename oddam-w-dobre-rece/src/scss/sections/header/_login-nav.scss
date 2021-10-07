@@ -6,17 +6,31 @@
 
   li {
     font-family: $font-base;
-    padding: 10px 9px 10px 9px;
     font-size: 14px;
+    margin-left: 30px;
+    color: $color-text-aside;
+    p{
+      color: $color-text-main;
+    }
+  }
+  &__list-animated{
     @include buttonAnimation;
   }
-  li:last-child {
-    border: 0.75px solid $color-yellow;
-    font-size: 13px;
-    margin-left: 20px;
+  
+  &__button{
+    border: none;
+    background-color: inherit;
+    color: inherit;
   }
   &__link {
-    color: $color-text-aside;
     text-decoration: none;
+    outline: none;
+    color: inherit;
+    &-yellow {
+      border: 0.75px solid $color-yellow;
+      font-size: 13px;
+      padding: 10px 9px 10px 9px;
+      color: inherit;
+    }
   }
 }

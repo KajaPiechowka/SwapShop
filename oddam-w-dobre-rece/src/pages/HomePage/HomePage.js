@@ -11,7 +11,7 @@ import Navigation from '../../components/Navigation/Navigation';
 const HomePage = () => (
   <>
     <Navigation>
-      <div className="hero-image" />
+      <div className="hero-image-main" />
       <HomeTitle />
     </Navigation>
     <ThreeColumns />

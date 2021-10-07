@@ -11,7 +11,7 @@ const PartnersSection = () => {
   return (
     <section id="partners" className="container partners">
       <h3>Komu pomagamy?</h3>
-      <DecorationImg />
+      <DecorationImg mariginBottom={55} />
       <div className="partners__buttons">
         <button
           type="button"

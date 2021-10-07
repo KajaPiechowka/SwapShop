@@ -13,9 +13,15 @@
     cursor: pointer;
     @include buttonAnimation;
   }
+  a {
+    padding: 5 10 5 10;
+    color: inherit;
+    text-decoration: none;
+  }
   &__start {
     border: 0.75px solid $color-text-main;
     padding: 9px 22px 9px 22px;
     margin-top: 0 !important;
+    background-color: $color-background-white;
   }
 }

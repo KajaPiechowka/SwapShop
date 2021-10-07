@@ -6,7 +6,7 @@ const AboutUs = () => (
   <section id="about-us" className="container about-us">
     <article>
       <span>O nas</span>
-      <DecorationImg />
+      <DecorationImg mariginBottom={55} />
       <p>
         Nori grape silver beet broccoli kombu beet greens fava bean potato
         quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil

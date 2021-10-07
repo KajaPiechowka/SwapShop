@@ -11,7 +11,7 @@ const SimpleSteps = () => (
   <section id="what-about" className="container simple-steps">
     <div className="simple-steps__header">
       <h4>Wystarczą 4 proste kroki</h4>
-      <DecorationImg />
+      <DecorationImg mariginBottom={55} />
     </div>
     <div className="simple-steps__steps">
       <Step

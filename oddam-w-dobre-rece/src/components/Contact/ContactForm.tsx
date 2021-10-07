@@ -9,6 +9,9 @@ interface FormData {
   message: string;
 }
 
+const API = process.env.REACT_APP_API ? process.env.REACT_APP_API : '';
+console.log(API);
+
 const ContactForm = () => {
   const [status, setStatus] = useState('');
   const {
@@ -18,7 +21,7 @@ const ContactForm = () => {
   } = useForm<FormData>();
 
   const postData = (data: FormData) => {
-    fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+    fetch(API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

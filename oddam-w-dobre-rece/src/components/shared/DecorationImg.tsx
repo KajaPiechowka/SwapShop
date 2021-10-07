@@ -14,7 +14,10 @@ const DecorationImg = ({
     className="decoration"
     src={Decoration}
     alt="decoration"
-    style={{ marginBottom: mariginBottom, transform: `scale(${scale})` }}
+    style={{
+      marginBottom: mariginBottom,
+      transform: `scale(${scale})`,
+    }}
   />
 );
 
