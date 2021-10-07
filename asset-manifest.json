@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/oddam-w-dobre-rece/static/css/main.1e393a7b.chunk.css",
+    "main.js": "/oddam-w-dobre-rece/static/js/main.60cae5fb.chunk.js",
+    "main.js.map": "/oddam-w-dobre-rece/static/js/main.60cae5fb.chunk.js.map",
+    "runtime-main.js": "/oddam-w-dobre-rece/static/js/runtime-main.0c9295e4.js",
+    "runtime-main.js.map": "/oddam-w-dobre-rece/static/js/runtime-main.0c9295e4.js.map",
+    "static/js/2.c9911003.chunk.js": "/oddam-w-dobre-rece/static/js/2.c9911003.chunk.js",
+    "static/js/2.c9911003.chunk.js.map": "/oddam-w-dobre-rece/static/js/2.c9911003.chunk.js.map",
+    "index.html": "/oddam-w-dobre-rece/index.html",
+    "static/css/main.1e393a7b.chunk.css.map": "/oddam-w-dobre-rece/static/css/main.1e393a7b.chunk.css.map",
+    "static/js/2.c9911003.chunk.js.LICENSE.txt": "/oddam-w-dobre-rece/static/js/2.c9911003.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/oddam-w-dobre-rece/static/media/Icon-Arrow-Down.2c792a10.svg",
+    "static/media/Decoration.1172adb4.svg": "/oddam-w-dobre-rece/static/media/Decoration.1172adb4.svg",
+    "static/media/Facebook.1c1ea3ae.svg": "/oddam-w-dobre-rece/static/media/Facebook.1c1ea3ae.svg",
+    "static/media/Instagram.5b663cf3.svg": "/oddam-w-dobre-rece/static/media/Instagram.5b663cf3.svg",
+    "static/media/Signature.c2a96569.svg": "/oddam-w-dobre-rece/static/media/Signature.c2a96569.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c9295e4.js",
+    "static/js/2.c9911003.chunk.js",
+    "static/css/main.1e393a7b.chunk.css",
+    "static/js/main.60cae5fb.chunk.js"
+  ]
+}
