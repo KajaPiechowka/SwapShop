@@ -93,7 +93,7 @@ const Summary = ({ data, prevFunction }: SummaryProps): JSX.Element => (
       </div>
     </div>
     <NavigationButtons
-      actionNext={() => console.log('koniec')}
+      actionNext={() => console.log('koniec TODO')}
       actionPrev={prevFunction}
       nextText="Potwierdzam"
     />
@@ -146,7 +146,6 @@ const GiveAwayForm = (): JSX.Element => {
   };
 
   const onSubmit = (data: FormData): void => {
-    console.log(data);
     setFormData(data);
     goToNext();
   };

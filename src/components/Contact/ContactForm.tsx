@@ -10,7 +10,6 @@ interface FormData {
 }
 
 const API = process.env.REACT_APP_API ? process.env.REACT_APP_API : '';
-console.log(API);
 
 const ContactForm = () => {
   const [status, setStatus] = useState('');
