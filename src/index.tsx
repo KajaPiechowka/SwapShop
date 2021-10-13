@@ -10,6 +10,7 @@ import GiveAwayPage from './pages/GiveAwayPage/GiveAwayPage';
 const App = () => (
   <BrowserRouter>
     <FirebaseContext.Provider value={new Firebase()}>
+      {console.log('dupa123 no kaja no cry')}
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LoginPannel} />
       <Route path="/register" component={LoginPannel} />
